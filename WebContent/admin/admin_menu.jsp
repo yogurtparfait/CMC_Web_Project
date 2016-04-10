@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Admin Menu</title>
 </head>
 <body>
-
+<a href = "manage_universities.jsp">Manage Universities</a>
+<br>
+<a href = "manage_people.jsp">Manage People</a>
 </body>
 </html>
