@@ -1,12 +1,25 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@page language="java" import="controllers.*, entities.*, interfaces.*"%>
 
-</body>
-</html>
+<%
+	PersonUI pui = new PersonUI();
+
+	try{
+		PersonUI newUI = pui.logOn(request.getParameter("Username"),request.getParameter("Password"), Boolean.parseBoolean(request.getParameter("Steal")));
+		
+		if(newUI instanceof UserUI){
+			session.setAttribute("userUI", (UserUI) newUI);
+			session.setAttribute("isAdmin", false);
+			response.sendRedirect("./user/user_menu.jsp");
+		}
+		else if (newUI instanceof AdminUI){
+			session.setAttribute("adminUI", (AdminUI) newUI);
+			session.setAttribute("isAdmin", true);
+			response.sendRedirect("./admin/admin_menu.jsp");
+		}
+	}
+	catch(IllegalArgumentException e) //
+	{
+		response.sendRedirect("login.jsp"); //add error here somehow for when invalid login
+		
+	}
+%>
