@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <%
-if(!Boolean.parseBoolean((String)session.getAttribute("isAdmin")))
+if(!(Boolean) session.getAttribute("isAdmin"))
 {
 	response.sendRedirect("../person/login.jsp?Error=notAuthorizedAdmin");
 }
