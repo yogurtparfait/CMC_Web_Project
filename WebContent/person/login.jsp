@@ -21,7 +21,13 @@ String anyErrors = request.getParameter("Error");
             }            
             else if (anyErrors.equals("OtherArgument")){
                 out.println("something is badddd");
-            }            
+            }
+            else if (anyErrors.equals("notAuthorizedAdmin")){
+            	out.println("you have to log in as an Admin to do that");
+            }
+            else if (anyErrors.equals("notAuthorizedUser")){
+            	out.println("you have to log in as a User to do that");
+            }
         }
 %>
 <form method="post" action="login_action.jsp" name="login"><br>
@@ -41,7 +47,7 @@ border="1" cellpadding="2" cellspacing="2">
 <tr>
 <td style="vertical-align: top;">Steal<br>
 </td>
-<td style="vertical-align: top;"><input name="Steal"> </td>
+<td style="vertical-align: top;"><input type = "checkbox" name="Steal"></td>
 </tr>
 <tr>
 
