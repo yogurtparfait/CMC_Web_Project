@@ -527,10 +527,17 @@ public class DBController {
 	 * @return
 	 */
 	public List<School> search(String name,String state,String location,String control,
-			int numStudents,double percentFemale,double SATVerb,double SATMath,double expenses,
-			double percentFinancialAid,int numberOfApplicants,double percentAdmitted,
-			double percentEnrolled,int academicsScale,int socialScale,int qualityOfLifeScale,
-			String[] emphases){
+			
+			int BOTnumStudents,double BOTpercentFemale,int BOTSATVerb,double BOTSATMath,double BOTexpenses,
+			int TOPnumStudents,double TOPpercentFemale,int TOPSATVerb,double TOPSATMath,double TOPexpenses,
+			
+			double BOTpercentFinancialAid,int BOTnumberOfApplicants,double BOTpercentAdmitted,
+			double TOPpercentFinancialAid,int TOPnumberOfApplicants,double TOPpercentAdmitted,
+			
+			double BOTpercentEnrolled,int BOTacademicsScale,int BOTsocialScale,int BOTqualityOfLifeScale,
+			double TOPpercentEnrolled,int TOPacademicsScale,int TOPsocialScale,int TOPqualityOfLifeScale,
+			
+			String [] emphases){
 	
 		String[][] currentEmphases;
 		boolean emphasesEqual = true;
@@ -567,29 +574,41 @@ public class DBController {
 							//control
 							(currentSchool[3].equals(control) || control.equals("")) &&
 							//numberOfStudents
-							(Integer.parseInt(currentSchool[4])== numStudents || numStudents==-1) &&
+							(((BOTnumStudents<=Integer.parseInt(currentSchool[4])&&Integer.parseInt(currentSchool[4])<=TOPnumStudents))|| 
+									TOPnumStudents==-1) &&
 							//PercentFemale
-							(Double.parseDouble(currentSchool[5])== percentFemale || percentFemale==-1) &&
+							((BOTpercentFemale<=(Double.parseDouble(currentSchool[5]))&&(Double.parseDouble(currentSchool[5])<=TOPpercentFemale))|| 
+									TOPnumStudents==-1) &&
 							//SATVerbal
-							(Double.parseDouble(currentSchool[6])== SATVerb || SATVerb==-1) &&
+							((BOTSATVerb<=(Double.parseDouble(currentSchool[6]))&&(Double.parseDouble(currentSchool[6])<=TOPSATVerb))|| 
+									TOPnumStudents==-1) &&
 							//SATMath
-							(Double.parseDouble(currentSchool[7])== SATMath || SATMath==-1) &&
+							((BOTSATMath<=(Double.parseDouble(currentSchool[7]))&&(Double.parseDouble(currentSchool[7])<=TOPSATMath))|| 
+									TOPnumStudents==-1) &&
 							//Expenses
-							(Double.parseDouble(currentSchool[8])== expenses || expenses==-1) &&
+							((BOTexpenses<=(Double.parseDouble(currentSchool[8]))&&(Double.parseDouble(currentSchool[8])<=TOPexpenses))|| 
+									TOPnumStudents==-1) &&
 							//PercentFincancialAid
-							(Double.parseDouble(currentSchool[9])== percentFinancialAid || percentFinancialAid==-1) &&
+							((BOTpercentFinancialAid<=(Double.parseDouble(currentSchool[9]))&&(Double.parseDouble(currentSchool[9])<=TOPpercentFinancialAid))|| 
+									TOPnumStudents==-1) &&
 							//NumberOfApplicants
-							(Integer.parseInt(currentSchool[10])== numberOfApplicants || numberOfApplicants==-1) &&
+							(((BOTnumberOfApplicants<=Integer.parseInt(currentSchool[10])&&Integer.parseInt(currentSchool[10])<=TOPnumberOfApplicants))|| 
+									TOPnumStudents==-1) &&
 							//PercentAdmitted
-							(Double.parseDouble(currentSchool[11])== percentAdmitted || percentAdmitted==-1) &&
+							((BOTpercentAdmitted<=(Double.parseDouble(currentSchool[11]))&&(Double.parseDouble(currentSchool[11])<=TOPpercentAdmitted))|| 
+									TOPnumStudents==-1) &&
 							//PercentEnrolled
-							(Double.parseDouble(currentSchool[12])== percentEnrolled || percentEnrolled==-1) &&
+							((BOTpercentEnrolled<=(Double.parseDouble(currentSchool[12]))&&(Double.parseDouble(currentSchool[12])<=TOPpercentEnrolled))|| 
+									TOPnumStudents==-1) &&
 							//AcademicsScale
-							(Integer.parseInt(currentSchool[13])== academicsScale || academicsScale==-1) &&
+							(((BOTacademicsScale<=Integer.parseInt(currentSchool[13])&&Integer.parseInt(currentSchool[13])<=TOPacademicsScale))|| 
+									TOPnumStudents==-1) &&
 							//SocialScale
-							(Integer.parseInt(currentSchool[14])== socialScale || socialScale==-1) &&
+							(((BOTsocialScale<=Integer.parseInt(currentSchool[14])&&Integer.parseInt(currentSchool[14])<=TOPsocialScale))|| 
+									TOPnumStudents==-1) &&
 							//QualityOfLife
-							(Integer.parseInt(currentSchool[15])== qualityOfLifeScale || qualityOfLifeScale==-1)&&
+							(((BOTqualityOfLifeScale<=Integer.parseInt(currentSchool[15])&&Integer.parseInt(currentSchool[15])<=TOPqualityOfLifeScale))|| 
+									TOPnumStudents==-1) &&
 							//Emphases
 							emphasesEqual)
 							

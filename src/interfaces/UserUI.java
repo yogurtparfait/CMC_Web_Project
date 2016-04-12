@@ -76,15 +76,30 @@ public class UserUI extends PersonUI{
 	 * @param emphases
 	 * @return list of schools matching parameters
 	 */
+	
+	//TOPs should be -1 if invalid or ""
 	public List<School> search(String name,String state,String location,String control,
-			int numStudents,double percentFemale,int SATVerb,double SATMath,double expenses,
-			double percentFinancialAid,int numberOfApplicants,double percentAdmitted,
-			double percentEnrolled,int academicsScale,int socialScale,int qualityOfLifeScale,
+			
+			int BOTnumStudents,double BOTpercentFemale,int BOTSATVerb,double BOTSATMath,double BOTexpenses,
+			int TOPnumStudents,double TOPpercentFemale,int TOPSATVerb,double TOPSATMath,double TOPexpenses,
+			
+			double BOTpercentFinancialAid,int BOTnumberOfApplicants,double BOTpercentAdmitted,
+			double TOPpercentFinancialAid,int TOPnumberOfApplicants,double TOPpercentAdmitted,
+			
+			double BOTpercentEnrolled,int BOTacademicsScale,int BOTsocialScale,int BOTqualityOfLifeScale,
+			double TOPpercentEnrolled,int TOPacademicsScale,int TOPsocialScale,int TOPqualityOfLifeScale,
+			
 			String [] emphases){
 		return this.controller.search(name,state,location,control,
-				numStudents,percentFemale,SATVerb,SATMath,expenses,
-				percentFinancialAid,numberOfApplicants,percentAdmitted,
-				percentEnrolled,academicsScale,socialScale,qualityOfLifeScale, emphases);
+				BOTnumStudents,BOTpercentFemale,BOTSATVerb,BOTSATMath,BOTexpenses,
+				TOPnumStudents,TOPpercentFemale,TOPSATVerb,TOPSATMath,TOPexpenses,
+				
+				BOTpercentFinancialAid,BOTnumberOfApplicants,BOTpercentAdmitted,
+				TOPpercentFinancialAid,TOPnumberOfApplicants,TOPpercentAdmitted,
+				
+				BOTpercentEnrolled,BOTacademicsScale,BOTsocialScale,BOTqualityOfLifeScale,
+				TOPpercentEnrolled,TOPacademicsScale,TOPsocialScale,TOPqualityOfLifeScale
+				, emphases);
 	}
 	
 	/**
