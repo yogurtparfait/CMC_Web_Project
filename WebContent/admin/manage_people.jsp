@@ -44,6 +44,9 @@
 					Password
 				</td>
 				<td style="vertical-align: top;">
+					isAdmin
+				</td>
+				<td style="vertical-align: top;">
 					Status
 				</td>
 				<td style="vertical-align: top;">
@@ -68,6 +71,9 @@
 				</td>
 				<td style="vertical-align: top;">
 					<%out.println(p.getPassword()); %>
+				</td>
+				<td style="vertical-align: top;">
+					<%out.println(p.getIsAdmin()); %>
 				</td>
 				<td style="vertical-align: top;">
 					Person.isActive() not a thing?

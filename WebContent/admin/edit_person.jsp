@@ -46,7 +46,7 @@ String anyErrors = request.getParameter("Error");
 				</tr>
 				<tr>
 					<td style="vertical-align: top;" >Username: </td>
-					<td style="vertical-align: top;"><input name="userName" value="<%=person.getUsername()%>" readonly> </td>
+					<td style="vertical-align: top;"><input name="username" value="<%=person.getUsername()%>" readonly> </td>
 				</tr>
 				<tr>
 					<td style="vertical-align: top;">Password: </td>
