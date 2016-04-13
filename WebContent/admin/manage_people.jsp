@@ -17,6 +17,8 @@
 		<title>Manage People</title>
 	</head>
 <body>
+
+
 	<table style="text-align: left; width: 266px; height: 228px;"
 			border="1" cellpadding="2" cellspacing="2">
 		<tbody>
