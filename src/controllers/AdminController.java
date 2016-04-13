@@ -110,7 +110,7 @@ public class AdminController extends PersonController{
 			 * @return true on success
 			 */
 			public boolean updatePerson(Person person, String firstName, String lastName, String password, String type){
-				return database.updatePerson(person, firstName, lastName, password);
+				return database.updatePerson(person, firstName, lastName, password);		//we lose type here!!!!!!!!
 			}
 			
 			/**

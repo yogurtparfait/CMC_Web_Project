@@ -17,6 +17,8 @@
 		<title>Manage People</title>
 	</head>
 <body>
+
+
 	<table style="text-align: left; width: 266px; height: 228px;"
 			border="1" cellpadding="2" cellspacing="2">
 		<tbody>
@@ -40,6 +42,9 @@
 				</td>
 				<td style="vertical-align: top;">
 					Password
+				</td>
+				<td style="vertical-align: top;">
+					isAdmin
 				</td>
 				<td style="vertical-align: top;">
 					Status
@@ -66,6 +71,9 @@
 				</td>
 				<td style="vertical-align: top;">
 					<%out.println(p.getPassword()); %>
+				</td>
+				<td style="vertical-align: top;">
+					<%out.println(p.getIsAdmin()); %>
 				</td>
 				<td style="vertical-align: top;">
 					Person.isActive() not a thing?
