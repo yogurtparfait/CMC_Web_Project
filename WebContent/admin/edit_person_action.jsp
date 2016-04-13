@@ -15,10 +15,7 @@
 	{
 		response.sendRedirect("manage_people.jsp?Error=notAPerson");
 	}
-	System.out.println("person is not null" + person!=null);
-	System.out.println("isAdmin not null" + person.getIsAdmin()!=null);
-	aui.updatePerson(person, request.getParameter("firstName"), request.getParameter("lastName"), request.getParameter("password"), "type");// Currently throwing nullPointer
-	//aui.updatePerson(person, "firstname","lastname","password", "a");
+	aui.updatePerson(person, request.getParameter("firstName"), request.getParameter("lastName"), request.getParameter("password"), "type");
 	response.sendRedirect("manage_people.jsp");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
