@@ -25,6 +25,9 @@
 		else if (e.getMessage().equals("Username incorrect")){
 			response.sendRedirect("login.jsp?Error=Username");
 		}
+		else if (e.getMessage().equals("Person is deactivated")){
+			response.sendRedirect("login.jsp?Error=Deactivated");
+		}
 		else if (e.getMessage().equals("Session in use")){
 			response.sendRedirect("login.jsp?Error=Steal");
 		}

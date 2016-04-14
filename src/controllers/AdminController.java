@@ -90,10 +90,12 @@ public class AdminController extends PersonController{
 			public boolean changeStatus(Person p){
 				if(p.getIsActive()){ 
 					database.deactivate(p);
+					p.setIsActive(false);
 					return true;
 				}
 				else{
 					database.activate(p);
+					p.setIsActive(true);
 					return true;
 				}
 	

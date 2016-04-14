@@ -47,7 +47,7 @@
 					isAdmin
 				</td>
 				<td style="vertical-align: top;">
-					Status
+					isActive
 				</td>
 				<td style="vertical-align: top;">
 					
@@ -57,7 +57,10 @@
 			<tr>
 				<td style="vertical-align: top;">
 					<form method="post" action="deactivate_activate_person_action.jsp" name="deactivate_activate_person">
-						<input value="activate/deactivate"name="activate_deactivate" type="submit">
+						<input value= <%out.println(p.getUsername());%> name = "username" type = "hidden">
+						<input value=<%if(p.getIsActive())out.println("deactivate"); 
+										else out.println("activate"); %>
+										name="activate_deactivate" type="submit">
 					</form>
 				</td>
 				<td style="vertical-align: top;">
@@ -76,7 +79,7 @@
 					<%out.println(p.getIsAdmin()); %>
 				</td>
 				<td style="vertical-align: top;">
-					Person.isActive() not a thing?
+					<%out.println(p.getIsActive()); %>
 				</td>
 				<td style="vertical-align: top;">
 					<form method="post" action="edit_person.jsp" name="edit_person">

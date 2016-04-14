@@ -19,7 +19,8 @@
 	//person.setIsAdmin(Boolean.parseBoolean(request.getParameter("isAdmin")));
 	//aui.addPerson(firstName, lastName, password, username, type)
 	
-	aui.addPerson(request.getParameter("firstName"), request.getParameter("lastName"), request.getParameter("password"), request.getParameter("username"), 'u'); // not correct for is admin
+	aui.addPerson(request.getParameter("firstName"), request.getParameter("lastName"),
+			request.getParameter("password"), request.getParameter("username"), Boolean.parseBoolean(request.getParameter("isAdmin"))); // not correct for is admin
 	
 	response.sendRedirect("manage_people.jsp");
 %>

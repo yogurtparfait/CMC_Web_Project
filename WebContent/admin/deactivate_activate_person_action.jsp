@@ -21,7 +21,7 @@
 	//Can't deactivate or activate yourself:
 	//need AdminUI.getCurrentPersonUsername()
 	
-	aui.changeStatus(aui.getPersonByUsername((String) request.getAttribute("username")) );
+	aui.changeStatus((String) request.getParameter("username"));
 	
 	response.sendRedirect("manage_people.jsp");
 %>

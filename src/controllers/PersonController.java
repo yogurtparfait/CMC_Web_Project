@@ -45,7 +45,7 @@ public class PersonController {
 					}
 					else
 					{											//going to be could not steal
-						throw new IllegalArgumentException("need to steal");
+						throw new IllegalArgumentException("Session in use");
 					}
 				}
 				else

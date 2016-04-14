@@ -15,7 +15,8 @@
 	{
 		response.sendRedirect("manage_people.jsp?Error=notAPerson");
 	}
-	aui.updatePerson(person, request.getParameter("firstName"), request.getParameter("lastName"), request.getParameter("password"), "type");
+	aui.updatePerson(person, request.getParameter("firstName"), request.getParameter("lastName"),
+			request.getParameter("password"), Boolean.parseBoolean(request.getParameter("isAdmin")), person.getIsActive());
 	response.sendRedirect("manage_people.jsp");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

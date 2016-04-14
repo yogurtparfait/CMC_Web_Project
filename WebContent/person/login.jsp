@@ -19,6 +19,9 @@ String anyErrors = request.getParameter("Error");
             else if (anyErrors.equals("Steal")){
             	out.println("Check Steal to take existing session");
             }
+            else if (anyErrors.equals("Deactivated")){
+            	out.println("You are deactivated. Contact your Administrator regarding your status.");
+            }
             else if (anyErrors.equals("Other")){
                 out.println("Other Illegal Argument");
             }            

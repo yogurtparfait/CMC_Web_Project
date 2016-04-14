@@ -21,9 +21,7 @@
 <%
 String anyErrors = request.getParameter("Error");
         if(anyErrors!=null){
-            if (anyErrors.equals("notAUser")){
-                out.println("The person you tried to Edit does not exist");
-            }
+            
         }
  %>
 	<form method="post" action="add_person_action.jsp" name="add">
