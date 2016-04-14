@@ -184,7 +184,7 @@ public class DBController {
 		return returnSchools;	
 	}
 	
-	/** Retruns list of persons that are users.
+	/** Returns list of persons that are users.
 	 * @return 
 	 */
 	public List<Person> getPeople(){
@@ -232,7 +232,7 @@ public class DBController {
 	 * @param username username of person
 	 * @return
 	 */
-	public boolean addPerson(String firstName, String lastName, String password, String username,char type){ //use other with boolean from now out
+	/*public boolean addPerson(String firstName, String lastName, String password, String username,char type){ //use other with boolean from now out
 		
 		Person p = this.findByUserName(username);
 		if(!(p==null)) {
@@ -247,7 +247,7 @@ public class DBController {
 			
 			else return true;
 		}
-	}
+	}*/
 	
 	public boolean addPerson(String firstName, String lastName, String password, String username, boolean isAdmin){ //assuming people are created active
 		
@@ -295,7 +295,7 @@ public class DBController {
 	 * @param p
 	 * @return
 	 */
-	public char getActiveState(Person p){			//work on eliminating
+	/*public char getActiveState(Person p){			//work on eliminating
 		String[][] persons = library.user_getUsers();
 		for(String[] personInfo:persons){
 			if(p.getUsername().equals(personInfo[2])){
@@ -303,7 +303,7 @@ public class DBController {
 			}
 		}
 		return 'e'; //Person not found. Make sure to catch. ERROR
-	}
+	}*/
 	
 	//Should this update person in general? Can an admin update an admin?
 	/** Updates the person info

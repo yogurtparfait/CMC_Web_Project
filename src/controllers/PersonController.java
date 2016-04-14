@@ -62,7 +62,7 @@ public class PersonController {
 			throw new IllegalArgumentException("Username incorrect");
 		}
 	}
-	
+	 
 	/**
 	 * logs a person out
 	 * @return true on success
@@ -85,10 +85,10 @@ public class PersonController {
 	 * @param p Person to be checked
 	 * @return a for active d for deactivated
 	 */
-	public char getActiveState(Person p)					//need to eliminate this does not belong here
+	/*public char getActiveState(Person p)					//need to eliminate this does not belong here
 	{
 		return database.getActiveState(p);
-	}
+	}*/
 	/**
 	 * Gets database entry with specified name
 	 * @param name

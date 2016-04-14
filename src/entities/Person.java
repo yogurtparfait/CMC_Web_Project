@@ -28,7 +28,7 @@ public class Person {
 	 * @param isActive boolean set person active or deactivated
 	 */
 	public void setIsActive(boolean isActive)
-	{
+	{ 
 		this.isActive = isActive;
 	}
 	

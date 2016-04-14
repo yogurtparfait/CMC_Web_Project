@@ -5,7 +5,7 @@ package entities;
  *
  */
 
-
+ 
 public class Admin extends Person{
 	/**
 	 * Default constructor for Admin

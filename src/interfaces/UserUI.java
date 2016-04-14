@@ -22,7 +22,7 @@ public class UserUI extends PersonUI{
 	
 	/**
 	 * @return schools saved by user
-	 */
+	 */ 
 	public List<School> getSavedSchools(){
 		return this.controller.getSavedSchools();
 	}
