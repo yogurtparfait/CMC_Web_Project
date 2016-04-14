@@ -185,11 +185,11 @@ import entities.*;
 			Person u5 = new User("firstName5","lastName5","username5","password5");
 			
 			assertTrue("Update fails when person's username is not in database",
-					!(controller.updatePerson(u5,"firstName5!!!","lastName5!!!","password5!!!")));
+					!(controller.updatePerson(u5,"firstName5!!!","lastName5!!!","password5!!!", false, true))); //isAdmin, isActive
 			
-			controller.addPerson("firstName5","lastName5","password5","username5",'u');
+			controller.addPerson("firstName5","lastName5","password5","username5",false);
 			
-			controller.updatePerson(u5,"firstName5!!!","lastName5!!!","password5!!!");
+			controller.updatePerson(u5,"firstName5!!!","lastName5!!!","password5!!!", false, u5.getIsActive());
 			Person u6 = controller.findByUserName(u5.getUsername());
 			
 			assertTrue("update changes firstName",u6.getFirstName().equals("firstName5!!!"));

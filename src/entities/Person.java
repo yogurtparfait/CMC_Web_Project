@@ -13,9 +13,24 @@ public class Person {
 	//IsLoggedOn currently does nothing
 	private boolean isLoggedOn;
 	private boolean isAdmin;
-
+	private boolean isActive;
 	
+	/**
+	 * gets whether person is active
+	 * @return isActive of person
+	 */
+	public boolean getIsActive()
+	{
+		return isActive;
+	}
 	
+	/**
+	 * @param isActive boolean set person active or deactivated
+	 */
+	public void setIsActive(boolean isActive)
+	{
+		this.isActive = isActive;
+	}
 	
 	/**
 	 * gets password

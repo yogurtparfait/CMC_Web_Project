@@ -146,8 +146,9 @@ public class UserController {
 	 * @param type
 	 * @return true on success
 	 */
-	public boolean UpdateUser(String firstName, String lastName, String password, String type){
-		return  database.updatePerson(this.thisUser, firstName, lastName, password);
+	public boolean UpdateUser(String firstName, String lastName, String password){
+		return database.updatePerson(thisUser, firstName, lastName, password, false, true); 
+		//users are never admins and if editing themselves they're active
 	}
 	
 	/**

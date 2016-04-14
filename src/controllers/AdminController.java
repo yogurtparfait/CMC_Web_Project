@@ -67,9 +67,9 @@ public class AdminController extends PersonController{
 			 * @param type
 			 * @return true on success
 			 */
-			public boolean addPerson(String firstName, String lastName, String password, String username, char type){
-				if(!(type=='a'||type=='u')) return false;
-				return database.addPerson(firstName, lastName, password,username, type);
+			public boolean addPerson(String firstName, String lastName, String password, String username, boolean isAdmin){
+				//if(!(type=='a'||type=='u')) return false;
+				return database.addPerson(firstName, lastName, password, username, isAdmin);
 			}
 			
 			/**
@@ -88,15 +88,14 @@ public class AdminController extends PersonController{
 			 * @return true on success
 			 */
 			public boolean changeStatus(Person p){
-				if(database.getActiveState(p)=='Y'){ 
+				if(p.getIsActive()){ 
 					database.deactivate(p);
 					return true;
 				}
-				else if(database.getActiveState(p)=='N'){
+				else{
 					database.activate(p);
 					return true;
 				}
-				return false;
 	
 			}
 			
@@ -109,8 +108,8 @@ public class AdminController extends PersonController{
 			 * @param type
 			 * @return true on success
 			 */
-			public boolean updatePerson(Person person, String firstName, String lastName, String password, String type){
-				return database.updatePerson(person, firstName, lastName, password);		//we lose type here!!!!!!!!
+			public boolean updatePerson(Person person, String firstName, String lastName, String password, boolean isAdmin, boolean isActive){
+				return database.updatePerson(person, firstName, lastName, password, isAdmin, isActive);
 			}
 			
 			/**
