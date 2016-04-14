@@ -7,17 +7,17 @@
 		response.sendRedirect("../person/login.jsp?Error=notAuthorizedAdmin");
 	}
 	AdminUI aui = (AdminUI) session.getAttribute("adminUI");   
-	Person person = new Person();
+	
 	try{
-		person = aui.getPersonByUsername(request.getParameter("username"));
+		Person person = aui.getPersonByUsername(request.getParameter("username"));
+		aui.updatePerson(person, request.getParameter("firstName"), request.getParameter("lastName"),
+				request.getParameter("password"), Boolean.parseBoolean(request.getParameter("isAdmin")), person.getIsActive());
+		response.sendRedirect("manage_people.jsp");
 	}
-	catch(Exception e) //person does not exist
+	catch(Exception e) //person does not exist //need to also take care of update exceptions
 	{
 		response.sendRedirect("manage_people.jsp?Error=notAPerson");
 	}
-	aui.updatePerson(person, request.getParameter("firstName"), request.getParameter("lastName"),
-			request.getParameter("password"), Boolean.parseBoolean(request.getParameter("isAdmin")), person.getIsActive());
-	response.sendRedirect("manage_people.jsp");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>

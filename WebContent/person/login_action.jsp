@@ -35,7 +35,6 @@
 			response.sendRedirect("login.jsp?Error=Other");
 		}
 	}
-
 	catch(Exception e)
 	{
 		response.sendRedirect("login.jsp?Error=OtherException");

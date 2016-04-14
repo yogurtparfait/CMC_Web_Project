@@ -88,6 +88,10 @@ public class AdminController extends PersonController{
 			 * @return true on success
 			 */
 			public boolean changeStatus(Person p){
+				if(p.getUsername().equals(thisAdmin.getUsername())){
+					throw new IllegalArgumentException("Cannot change your own status");
+				}
+				
 				if(p.getIsActive()){ 
 					database.deactivate(p);
 					p.setIsActive(false);
@@ -159,5 +163,8 @@ public class AdminController extends PersonController{
 			 */
 			public School getSchoolByName(String name){
 				return database.getSchoolByName(name);
+			}
+			public String getCurrentUsername() {
+				return thisAdmin.getUsername();
 			}
 }

@@ -5,24 +5,23 @@
 	if(!(Boolean) session.getAttribute("isAdmin"))
 	{
 		response.sendRedirect("../person/login.jsp?Error=notAuthorizedAdmin");
-	}
+	}																				// may need else because response redirect in if and later
 	AdminUI aui = (AdminUI) session.getAttribute("adminUI");   
 	Person person = new Person();
 	try{
 		person = aui.getPersonByUsername(request.getParameter("username"));
+		aui.addPerson(request.getParameter("firstName"), request.getParameter("lastName"),
+				request.getParameter("password"), request.getParameter("username"), 
+				Boolean.parseBoolean(request.getParameter("isAdmin"))); 
+		response.sendRedirect("manage_people.jsp");
 	}
-	catch(Exception e) //person does not exist
+	catch(Exception e) //person does not exist //also need to catch addperson exceptions
 	{
 		response.sendRedirect("manage_people.jsp?Error=notAPerson");
 	}
 	
-	//person.setIsAdmin(Boolean.parseBoolean(request.getParameter("isAdmin")));
-	//aui.addPerson(firstName, lastName, password, username, type)
 	
-	aui.addPerson(request.getParameter("firstName"), request.getParameter("lastName"),
-			request.getParameter("password"), request.getParameter("username"), Boolean.parseBoolean(request.getParameter("isAdmin"))); // not correct for is admin
 	
-	response.sendRedirect("manage_people.jsp");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>

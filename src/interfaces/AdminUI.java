@@ -81,10 +81,6 @@ public class AdminUI extends PersonUI {
 	public void changeStatus(Person p){
 		this.controller.changeStatus(p);	
 	}
-	public void changeStatus(String username){
-		Person p = this.controller.getPersonByUsername(username);
-		this.controller.changeStatus(p);
-	}
 	
 	/**
 	 * Changes fields in existing person according to parameters
@@ -143,5 +139,8 @@ public class AdminUI extends PersonUI {
 	 */
 	public School getSchoolByName(String name){
 		return this.controller.getSchoolByName(name);
+	}
+	public String getCurrentUsername(){
+		return this.controller.getCurrentUsername();
 	}
 }
