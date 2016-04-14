@@ -241,7 +241,7 @@ import entities.*;
 			assertTrue("findBySchoolName suceeds for valid school",
 					(controller.findBySchoolName("ABILENE CHRISTIAN UNIVERSITY").getState().equals("TEXAS")));
 		}
-		
+		/*
 		@Test
 		public void testSearch() {
 			String[] empty = new String[0];
@@ -289,6 +289,7 @@ import entities.*;
 			assertTrue("find returns correct school",
 					schools5.get(0).getName().equals("AMERICAN UNIVERSITY OF BEIRUT"));
 	}
+		*/
 		@Test
 		public void testRecommendations() {
 			List<School> schools = controller.getSchools();
