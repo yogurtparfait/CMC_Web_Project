@@ -6,7 +6,7 @@
 	{
 		response.sendRedirect("../person/login.jsp?Error=notAuthorizedAdmin");
 	}
-	AdminUI aui = (AdminUI) session.getAttribute("adminUI"); 
+	AdminUI aui = (AdminUI) session.getAttribute("UI"); 
 	String currentUsername = aui.getCurrentUsername();
 	List<Person> people = aui.getPeople();
 	
@@ -18,6 +18,7 @@
 		<title>Manage People</title>
 	</head>
 <body>
+	<%@ include file="../person/header.jsp" %>
 	<%
 		String anyErrors = request.getParameter("Error");
         if(anyErrors!=null){
@@ -97,7 +98,7 @@
 					<%out.println(p.getIsActive()); %>
 				</td>
 				<td style="vertical-align: top;">
-					<form method="post" action="edit_person.jsp" name="edit_person">
+					<form method="get" action="edit_person.jsp" name="edit_person">
 						<input value= <%out.println(p.getUsername());%> name = "username" type = "hidden">
 						<input value="edit"name="edit" type="submit">
 					</form>

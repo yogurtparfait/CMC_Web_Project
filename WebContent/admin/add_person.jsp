@@ -6,7 +6,7 @@
 	{
 		response.sendRedirect("../person/login.jsp?Error=notAuthorizedAdmin");
 	}
-	AdminUI aui = (AdminUI) session.getAttribute("adminUI");   
+	AdminUI aui = (AdminUI) session.getAttribute("UI");   
 	Person person = new Person();
 
 	
@@ -18,6 +18,7 @@
 <title>Edit <%=request.getParameter("username") %></title>
 </head>
 <body>
+<%@ include file="../person/header.jsp" %>
 <%
 String anyErrors = request.getParameter("Error");
         if(anyErrors!=null){

@@ -14,6 +14,7 @@ if(!(Boolean) session.getAttribute("isAdmin"))
 <title>Admin Menu</title>
 </head>
 <body>
+<%@ include file="../person/header.jsp" %>
 <a href = "manage_universities.jsp">Manage Universities</a>
 <br>
 <a href = "manage_people.jsp">Manage People</a>

@@ -17,6 +17,7 @@ public class AdminController extends PersonController{
 	 */
 	public AdminController(Admin a) {
 		this.thisAdmin = a;
+		super.assignPerson(a); //make sure we can still access a when not cast
 		database = new DBController();
 	}
 	/**

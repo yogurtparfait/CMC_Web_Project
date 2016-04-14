@@ -9,7 +9,7 @@ import interfaces.*;
  * @author Megan Jordan Noah Yang
  *
  */
-public class UserController {
+public class UserController extends PersonController{
 	private User thisUser;
 	private DBController database;
 	private SearchController search;
@@ -19,6 +19,7 @@ public class UserController {
 	 */
 	public UserController(User u) {
 		this.thisUser = u;
+		super.assignPerson(u);
 		database = new DBController();
 		search = new SearchController();
 	}

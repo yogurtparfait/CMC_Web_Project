@@ -6,7 +6,7 @@
 	{
 		response.sendRedirect("../person/login.jsp?Error=notAuthorizedAdmin");
 	}																				// may need else because response redirect in if and later
-	AdminUI aui = (AdminUI) session.getAttribute("adminUI");   
+	AdminUI aui = (AdminUI) session.getAttribute("UI");   
 	Person person = new Person();
 	try{
 		person = aui.getPersonByUsername(request.getParameter("username"));

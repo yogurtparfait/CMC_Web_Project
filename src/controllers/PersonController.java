@@ -80,6 +80,11 @@ public class PersonController {
 	public void assignPerson(Person p){
 		this.thisPerson = p;
 	}
+	
+	public String getCurrentUsername(){
+		return thisPerson.getUsername();
+	}
+	
 	/**
 	 * checks if person is active or deactivated
 	 * @param p Person to be checked

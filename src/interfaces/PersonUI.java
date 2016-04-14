@@ -52,6 +52,10 @@ public class PersonUI {
 		public School getSchoolByName(String name){
 			return this.controller.getSchoolByName(name);
 		}
+		
+		public String getCurrentUsername(){
+			return controller.getCurrentUsername();
+		}
 }
 	
 

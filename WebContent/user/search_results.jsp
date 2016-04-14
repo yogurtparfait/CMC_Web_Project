@@ -10,6 +10,8 @@ http-equiv="content-type">
 <title>searchResults</title>
 </head>
 <body>
+<%@ include file="../person/header.jsp" %> <!-- Noah this is just a header file I added with __ is logged on and a logout link -Megan -->
+
 <% List<School> schools = request.getParameter("schools");
 if(schools.isEmpty())
 	out.println("no schools found");

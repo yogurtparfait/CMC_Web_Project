@@ -6,7 +6,7 @@
 	{
 		response.sendRedirect("../person/login.jsp?Error=notAuthorizedAdmin");
 	}
-	AdminUI aui = (AdminUI) session.getAttribute("adminUI");   
+	AdminUI aui = (AdminUI) session.getAttribute("UI");   
 	Person person = new Person();
 	try{
 		person = aui.getPersonByUsername(request.getParameter("username"));
@@ -24,8 +24,9 @@
 <title>Edit <%=request.getParameter("username") %></title>
 </head>
 <body>
+<%@ include file="../person/header.jsp" %>
 <%
-String anyErrors = request.getParameter("Error");
+	String anyErrors = request.getParameter("Error");
         if(anyErrors!=null){
             if (anyErrors.equals("notAUser")){
                 out.println("The person you tried to Edit does not exist");
