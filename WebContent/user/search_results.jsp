@@ -11,7 +11,8 @@ http-equiv="content-type">
 <title>searchResults</title>
 </head>
 <body>
-<% List<School> schools = request.getParameter("schools");
+<%import ???;
+List<School> schools = request.getParameter("schools");
 if(schools.isEmpty())
 	out.println("no schools found");
 else{
