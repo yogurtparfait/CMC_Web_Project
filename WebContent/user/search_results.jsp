@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="controllers.*, entities.*, interfaces.*, java.util.*"%>  <!-- Megan added imports 4-13-->
+    pageEncoding="UTF-8" import="controllers.*, entities.*, interfaces.*, java.util.*"%>
 
    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -11,10 +11,9 @@ http-equiv="content-type">
 </head>
 <body>
 <<<<<<< HEAD
-<%import ???;
-List<School> schools = request.getParameter("schools");
 
-<<%@ include file="../person/header.jsp" %> <!-- Noah this is just a header file I added with __ is logged on and a logout link -Megan -->
+
+<%@ include file="../person/header.jsp" %> <!-- Noah this is just a header file I added with __ is logged on and a logout link -Megan -->
 
 <% List<School> schools = request.getParameter("schools");
 

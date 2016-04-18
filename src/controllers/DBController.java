@@ -596,8 +596,8 @@ public class DBController {
 	 */
 	public List<School> search(String name,String state,String location,String control,
 			
-			int BOTnumStudents,double BOTpercentFemale,int BOTSATVerb,double BOTSATMath,double BOTexpenses,
-			int TOPnumStudents,double TOPpercentFemale,int TOPSATVerb,double TOPSATMath,double TOPexpenses,
+			int BOTnumStudents,double BOTpercentFemale,double BOTSATVerb,double BOTSATMath,double BOTexpenses,
+			int TOPnumStudents,double TOPpercentFemale,double TOPSATVerb,double TOPSATMath,double TOPexpenses,
 			
 			double BOTpercentFinancialAid,int BOTnumberOfApplicants,double BOTpercentAdmitted,
 			double TOPpercentFinancialAid,int TOPnumberOfApplicants,double TOPpercentAdmitted,
