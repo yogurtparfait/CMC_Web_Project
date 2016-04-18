@@ -10,16 +10,17 @@ http-equiv="content-type">
 <title>searchResults</title>
 </head>
 <body>
-<<<<<<< HEAD
 
 
-<%@ include file="../person/header.jsp" %> <!-- Noah this is just a header file I added with __ is logged on and a logout link -Megan -->
 
-<% List<School> schools = request.getParameter("schools");
+<%//@ include file="../person/header.jsp" %> <!-- Commented out for now, throwing error -->
+
+<% List<School> schools = new ArrayList<School>() ;
+schools = (List)session.getAttribute("schoolsFound");
 
 
-if(schools.isEmpty())
-	out.println("no schools found");
+if(schools==null)
+	out.print(" No results found:<P>Return to<A HREF=\"search.jsp\"> search </A>");
 else{
 	%>
 	<table style="text-align: left; width: 100%;" border="1" cellpadding="2"
