@@ -31,13 +31,15 @@ else{
 		<tr>
 		<td style="vertical-align: top;">
 		<form action="save_school_action.jsp" name="saveSchool">&nbsp;&nbsp;&nbsp;
-		Save: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button name="save"></button></form>
+		Save: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input value="<%=s.getName()%>" type=hidden name=schoolName></input> 
+		<input name="save" type="submit"></input></form>
 		</td>
 		<td style="vertical-align: top;"><%out.println(s.getName()); %><br>
 		</td>
 		<td style="vertical-align: top;">
-		<form action="view_School.jsp" name="view">View: <button
-		name="view"></button></form>
+		<form action="view_School.jsp" name="view">View: <input value="<%=s.getName()%>" type=hidden name=schoolName></input>
+		<input
+		name="view" type="submit"></input></form>
 		</td>
 		</tr>
 		<%
