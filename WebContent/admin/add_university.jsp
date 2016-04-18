@@ -32,7 +32,7 @@ String anyErrors = request.getParameter("Error");
 			<tbody>
 				<tr>
 					<td style="vertical-align: top;">School Name: </td>
-					<td style="vertical-align: top;"><input name="name" > </td>
+					<td style="vertical-align: top;"><input name="schoolName" > </td>
 				</tr>
 				<tr>
 					<td style="vertical-align: top;">State: </td>
