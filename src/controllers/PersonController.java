@@ -28,29 +28,41 @@ public class PersonController {
 	 * @return PersonUI that is either and adminui or userui depending on which type of user just logged in
 	 */
 	public PersonUI logOn(String username, String password, boolean steal){
-		//Steal does nothing.
-		
+			//Steal does nothing.
+			
 		Person foundPerson = database.findByUserName(username);
-		if(!(foundPerson==null))if(password.equals(foundPerson.getPassword())){
-			if(database.logInPerson(foundPerson)){
-				if(foundPerson.getIsAdmin()){
-					return new AdminUI((Admin)foundPerson);
-				}
-				else //Person is user 
-					{ 
-						return new UserUI((User)foundPerson);
+		if(!(foundPerson==null)){								//person exists
+			if(password.equals(foundPerson.getPassword())){ 	//password correct
+				if(foundPerson.getIsActive()){					//is active
+					if(database.logInPerson(foundPerson)){ 		//going to be steal
+						if(foundPerson.getIsAdmin()){			//admin
+							return new AdminUI((Admin)foundPerson);
+						}
+						else 									//user 
+						{ 
+							return new UserUI((User)foundPerson);
+						}
 					}
+					else
+					{											//going to be could not steal
+						throw new IllegalArgumentException("Session in use");
+					}
+				}
+				else
+				{ 												//not active
+					throw new IllegalArgumentException("Person is deactivated");
+				}
 			}
-		else 
-			throw new IllegalArgumentException("Password incorrect");
-				
-			
+			else {												//bad password
+				throw new IllegalArgumentException("Password incorrect");
+			}
+		}															
+		else
+		{														//person does not exist
+			throw new IllegalArgumentException("Username incorrect");
 		}
-	
-			
-		throw new IllegalArgumentException("Username incorrect");
 	}
-	
+	 
 	/**
 	 * logs a person out
 	 * @return true on success
@@ -68,15 +80,20 @@ public class PersonController {
 	public void assignPerson(Person p){
 		this.thisPerson = p;
 	}
+	
+	public String getCurrentUsername(){
+		return thisPerson.getUsername();
+	}
+	
 	/**
 	 * checks if person is active or deactivated
 	 * @param p Person to be checked
 	 * @return a for active d for deactivated
 	 */
-	public char getActiveState(Person p)
+	/*public char getActiveState(Person p)					//need to eliminate this does not belong here
 	{
 		return database.getActiveState(p);
-	}
+	}*/
 	/**
 	 * Gets database entry with specified name
 	 * @param name

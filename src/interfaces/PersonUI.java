@@ -40,10 +40,10 @@ public class PersonUI {
 		 * @param p
 		 * @return a for active person d for deactivated
 		 */
-		public char getActiveState(Person p){
-			return this.controller.getActiveState(p);
+		/*public boolean getActiveState(Person p){
+			return p.getIsActive();
 			
-		}
+		}*/
 		/**
 		 * gets school from database with given name
 		 * @param name
@@ -51,6 +51,10 @@ public class PersonUI {
 		 */
 		public School getSchoolByName(String name){
 			return this.controller.getSchoolByName(name);
+		}
+		
+		public String getCurrentUsername(){
+			return controller.getCurrentUsername();
 		}
 }
 	

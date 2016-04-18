@@ -71,8 +71,8 @@ public class AdminUI extends PersonUI {
 	 * @param type
 	 * @return true on success
 	 */
-	public boolean addPerson(String firstName, String lastName, String password, String username, char type){
-		return this.controller.addPerson(firstName,lastName,password,username,type);	
+	public boolean addPerson(String firstName, String lastName, String password, String username, boolean isAdmin){
+		return this.controller.addPerson(firstName,lastName,password,username,isAdmin);	
 	}
 	/**
 	 * Activates a person who is deactivated and deactivates an activer person
@@ -91,8 +91,9 @@ public class AdminUI extends PersonUI {
 	 * @param type
 	 * @return
 	 */
-	public boolean updatePerson(Person person, String firstName, String lastName, String password, String type){
-		return this.controller.updatePerson(person, firstName,lastName,password,type);	
+	public boolean updatePerson(Person person, String firstName, String lastName, String password, boolean isAdmin, boolean isActive){
+		//return this.controller.updatePerson(person, firstName,lastName,password,type);	//implementing isAdmin and isActive
+		return this.controller.updatePerson(person, firstName, lastName, password, isAdmin, isActive);
 	}
 	/**
 	 * Changes fields in existing school according to parameters
@@ -138,5 +139,8 @@ public class AdminUI extends PersonUI {
 	 */
 	public School getSchoolByName(String name){
 		return this.controller.getSchoolByName(name);
+	}
+	public String getCurrentUsername(){
+		return this.controller.getCurrentUsername();
 	}
 }

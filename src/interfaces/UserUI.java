@@ -22,7 +22,7 @@ public class UserUI extends PersonUI{
 	
 	/**
 	 * @return schools saved by user
-	 */
+	 */ 
 	public List<School> getSavedSchools(){
 		return this.controller.getSavedSchools();
 	}
@@ -124,11 +124,10 @@ public class UserUI extends PersonUI{
 	 * @param firstName
 	 * @param lastName
 	 * @param password
-	 * @param type
 	 * @return true on success
 	 */
-	public boolean UpdateUser(String firstName, String lastName, String password, String type){
-	return this.controller.UpdateUser(firstName, lastName, password, type);
+	public boolean UpdateUser(String firstName, String lastName, String password){		//no type users editing themselves are users
+	return this.controller.UpdateUser(firstName, lastName, password);
 	}
 	
 	
