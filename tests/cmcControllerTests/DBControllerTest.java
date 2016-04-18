@@ -37,7 +37,7 @@ import entities.*;
 					.5,1,.5,
 					.5,1,1,1
 					);
-			controller.addPerson("firstName","lastName","password","username",'u');
+			controller.addPerson("firstName","lastName","password","username",false);
 			System.out.println(controller.addSavedSchool(u, s));
 			List<School> userSchools = controller.getUserSchools(u);
 			assertTrue("school saved", !(userSchools.isEmpty()));
@@ -64,7 +64,7 @@ import entities.*;
 					.5,1,.5,
 					.5,1,1,1
 					);
-			controller.addPerson("firstName","lastName","password","username",'u');
+			controller.addPerson("firstName","lastName","password","username",false);
 			
 			u = new User("firstName","lastName","username","password");
 			s = new School("name","state","location","control",
@@ -94,7 +94,7 @@ import entities.*;
 		}
 		@Test
 		public void testFindByUsername() {
-			boolean b = controller.addPerson("firstName","lastName","password","username",'u');
+			boolean b = controller.addPerson("firstName","lastName","password","username",false);
 			assertTrue("find by username fails for invalid username",(controller.findByUserName("OtherUsername")==null));
 			Person p = controller.findByUserName("username");
 			System.out.println(b);
@@ -140,7 +140,7 @@ import entities.*;
 					.5,1,.5,
 					.5,1,1,1
 					);
-			controller.addPerson("firstName", "lastName", "password", "username", 'u');
+			controller.addPerson("firstName", "lastName", "password", "username", false);
 			
 			List<School> userSchools = controller.getUserSchools(u);
 			assertTrue("getUserSchools returns empty array for user with no saved schools",(userSchools.isEmpty()));
@@ -163,20 +163,20 @@ import entities.*;
 		public void addPerson() {
 			controller.deletePerson("username5");
 			assertTrue("addPerson works for new person",controller.addPerson(
-					"firstName5","lastName5","password5","username5",'u'));
+					"firstName5","lastName5","password5","username5",false));
 			assertTrue("addPerson fails if person is in database",!controller.addPerson(
-					"firstName","lastName","password","username5",'u'));
+					"firstName","lastName","password","username5",false));
 			controller.deletePerson("username5");
 		}
 		
 		@Test
 		public void testActivateAndDeactivate() {
-			controller.addPerson("firstName5","lastName5","password5","username5",'u');
-			assertTrue("person starts active",controller.getActiveState(u)=='Y');
+			controller.addPerson("firstName5","lastName5","password5","username5",false);
+			assertTrue("person starts active",u.getIsActive());
 			controller.deactivate(u);
-			assertTrue("deactivate works for active user",controller.getActiveState(u)=='N');
+			assertTrue("deactivate works for active user",!u.getIsActive());
 			controller.activate(u);
-			assertTrue("activate works for non-active user",controller.getActiveState(u)=='Y');
+			assertTrue("activate works for non-active user",u.getIsActive());
 		}
 		
 		@Test

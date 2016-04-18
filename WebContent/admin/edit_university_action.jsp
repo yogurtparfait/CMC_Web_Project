@@ -10,16 +10,27 @@
 	
 	try{
 		School school = aui.getSchoolByName(request.getParameter("schoolName"));
-		aui.updateSchool(school, school.getName(), 
-				request.getParameter("state"), request.getParameter("location"), 
-				request.getParameter("control"), Integer.parseInt(request.getParameter("numberOfStudents")), 
-				Integer.parseInt(request.getParameter("percentFemale")), Integer.parseInt(request.getParameter("SATVerbal")), 
-				Integer.parseInt(request.getParameter("SATMath")), Integer.parseInt(request.getParameter("expenses")), 
-				Integer.parseInt(request.getParameter("percentFinancialAid")), Integer.parseInt(request.getParameter("numberOfApplicants")), 
-				Integer.parseInt(request.getParameter("percentAdmitted")), Integer.parseInt(request.getParameter("percentEnrolled")), 
-				Integer.parseInt(request.getParameter("academicsScale")), Integer.parseInt(request.getParameter("socialScale")), 
-				Integer.parseInt(request.getParameter("qualityOfLifeScale")), new String[5]);
+		System.out.println("school is null " + school==null);
+		System.out.println("school name " + school.getName());
+		boolean success = aui.updateSchool(school, school.getName(), 
+				request.getParameter("state"), 
+				request.getParameter("location"), 
+				request.getParameter("control"), 
+				Integer.parseInt(request.getParameter("numberOfStudents")), 
+				Integer.parseInt(request.getParameter("percentFemale")), 
+				Integer.parseInt(request.getParameter("SATVerbal")), 
+				Integer.parseInt(request.getParameter("SATMath")), 
+				Integer.parseInt(request.getParameter("expenses")), 
+				Integer.parseInt(request.getParameter("percentFinancialAid")), 
+				Integer.parseInt(request.getParameter("numberOfApplicants")), 
+				Integer.parseInt(request.getParameter("percentAdmitted")), 
+				Integer.parseInt(request.getParameter("percentEnrolled")), 
+				Integer.parseInt(request.getParameter("academicsScale")), 
+				Integer.parseInt(request.getParameter("socialScale")), 
+				Integer.parseInt(request.getParameter("qualityOfLifeScale")), 
+				new String[5]);
 
+		System.out.println("results: "+ success);
 		response.sendRedirect("manage_universities.jsp");
 	}
 	catch(Exception e) //person does not exist //also need to catch addperson exceptions

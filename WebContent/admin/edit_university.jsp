@@ -24,8 +24,8 @@
 String anyErrors = request.getParameter("Error");
 if(anyErrors!=null){}
 School s = aui.getSchoolByName(request.getParameter("schoolName"));
-System.out.println(request.getParameter("schoolName"));
-System.out.println(s==null);
+//System.out.println(request.getParameter("schoolName"));
+//System.out.println(s==null);
  %>
 	<form method="post" action="edit_university_action.jsp" name="add">
 		<table style="text-align: left; width: 266px; height: 228px;"
@@ -37,7 +37,7 @@ System.out.println(s==null);
 				</tr>
 				<tr>
 					<td style="vertical-align: top;">State: </td>
-					<td style="vertical-align: top;"><input name="state" value = <%=s.getState() %>> </td>
+					<td style="vertical-align: top;"><input name="state" value = "<%=s.getState() %>"> </td>
 				</tr>
 				<tr>
 					<td style="vertical-align: top;" >Location: </td>

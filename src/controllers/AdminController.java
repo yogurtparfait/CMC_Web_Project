@@ -140,13 +140,14 @@ public class AdminController extends PersonController{
 			 * @param socialScale
 			 * @param qualityOfLifeScale
 			 * @param emphases
+			 * @return 
 			 */
-			public void updateSchool(School s, String name,String state,String location,String control,
+			public boolean updateSchool(School s, String name,String state,String location,String control,
 			int numStudents,double percentFemale,double SATVerb,double SATMath,double expenses,
 			double percentFinancialAid,int numberOfApplicants,double percentAdmitted,
 			double percentEnrolled,int academicsScale,int socialScale,int qualityOfLifeScale,
 			String[] emphases){
-				database.updateSchool(s, name, state, location, control, numStudents, 
+				return database.updateSchool(s, name, state, location, control, numStudents, 
 						percentFemale, SATVerb, SATMath, expenses, percentFinancialAid, 
 						numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale, emphases);
 				
