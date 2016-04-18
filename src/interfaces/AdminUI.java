@@ -117,11 +117,11 @@ public class AdminUI extends PersonUI {
 	 * @param qualityOfLifeScale
 	 * @param emphases
 	 */
-	public void updateSchool(School s, String name,String state,String location,String control,
+	public boolean updateSchool(School s, String name,String state,String location,String control,
 	int numStudents,double percentFemale,double SATVerb,double SATMath,double expenses,
 	double percentFinancialAid,int numberOfApplicants,double percentAdmitted,
 	double percentEnrolled,int academicsScale,int socialScale,int qualityOfLifeScale, String[] emphases){
-		this.controller.updateSchool(s,name,state,location,control,
+		return this.controller.updateSchool(s,name,state,location,control,
 				numStudents,percentFemale,SATVerb,SATMath,expenses,
 				percentFinancialAid,numberOfApplicants,percentAdmitted,
 				percentEnrolled,academicsScale,socialScale,qualityOfLifeScale, emphases);
