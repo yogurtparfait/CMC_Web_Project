@@ -22,7 +22,7 @@
 	<%
 		String anyErrors = request.getParameter("Error");
         if(anyErrors!=null){
-            if (anyErrors.equals("notAUniversity")){
+            if (anyErrors.equals("notASchool")){
             	out.println("You cannot edit a university which does not exist");
             }
         }
@@ -142,8 +142,7 @@
 				<td style="vertical-align: top;">
 					
 					<form method = "get" action = "edit_university.jsp" name = "edit_university">
-						<input value = <%=s.getName() %> type = "hidden"
-						 name = schoolName>
+						<input value = "<%=s.getName() %>" name = "schoolName" type = hidden>
 						<input type = submit value = "Edit" name = "edit">
 					</form>
 				</td>
