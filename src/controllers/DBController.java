@@ -65,6 +65,13 @@ public class DBController {
 					returnUser.setUsername(currentUser[2]);
 					//System.out.println("Password: " + currentUser[3]);
 					returnUser.setPassword(currentUser[3]);
+					if (currentUser[5].equals("Y")){
+						returnUser.setIsActive(true);
+					}
+					else{
+						returnUser.setIsActive(false);
+					}
+					returnUser.setIsAdmin(false);
 					return returnUser;
 				}
 				else{ //isAdmin
@@ -77,6 +84,13 @@ public class DBController {
 				returnAdmin.setUsername(currentUser[2]);
 				//System.out.println("Password: " + currentUser[3]);
 				returnAdmin.setPassword(currentUser[3]);
+				if (currentUser[5].equals("Y")){
+					returnAdmin.setIsActive(true);
+				}
+				else{
+					returnAdmin.setIsActive(false);
+				}
+				returnAdmin.setIsAdmin(true);
 				return returnAdmin;
 				}				
 			}
@@ -170,7 +184,7 @@ public class DBController {
 		return returnSchools;	
 	}
 	
-	/** Retruns list of persons that are users.
+	/** Returns list of persons that are users.
 	 * @return 
 	 */
 	public List<Person> getPeople(){
@@ -183,6 +197,13 @@ public class DBController {
 				returnUser.setLastName(currentUser[1]);
 				returnUser.setUsername(currentUser[2]);
 				returnUser.setPassword(currentUser[3]);
+				if (currentUser[5].equals("Y")){
+					returnUser.setIsActive(true);
+				}
+				else{
+					returnUser.setIsActive(false);
+				}
+				returnUser.setIsAdmin(false);
 				returnPersons.add(returnUser);
 			}
 			else{ //isAdmin
@@ -191,6 +212,13 @@ public class DBController {
 			returnAdmin.setLastName(currentUser[1]);
 			returnAdmin.setUsername(currentUser[2]);
 			returnAdmin.setPassword(currentUser[3]);
+			if (currentUser[5].equals("Y")){
+				returnAdmin.setIsActive(true);
+			}
+			else{
+				returnAdmin.setIsActive(false);
+			}
+			returnAdmin.setIsAdmin(true);
 			returnPersons.add(returnAdmin);
 			}	
 		}
@@ -204,7 +232,7 @@ public class DBController {
 	 * @param username username of person
 	 * @return
 	 */
-	public boolean addPerson(String firstName, String lastName, String password, String username,char type){
+	/*public boolean addPerson(String firstName, String lastName, String password, String username,char type){ //use other with boolean from now out
 		
 		Person p = this.findByUserName(username);
 		if(!(p==null)) {
@@ -219,6 +247,27 @@ public class DBController {
 			
 			else return true;
 		}
+	}*/
+	
+	public boolean addPerson(String firstName, String lastName, String password, String username, boolean isAdmin){ //assuming people are created active
+		
+		Person p = this.findByUserName(username);
+		if(!(p==null)) {
+			return false;
+			
+		}
+		
+		else{
+			int i;
+			
+			if(isAdmin)
+				i = library.user_addUser(firstName,lastName,username,password,'a');
+			else
+				i = library.user_addUser(firstName,lastName,username,password,'u');
+			if(i<1) return false;
+			
+			else return true;
+		}
 	}
 	
 	/**
@@ -226,10 +275,16 @@ public class DBController {
 	 * @param u Person 
 	 * @return
 	 */
-	public boolean activate(Person u){
-		Person p = this.findByUserName(u.getUsername());
-		int i = library.user_editUser(p.getUsername(),p.getFirstName(),p.getLastName(),p.getPassword()
-				,'u','Y');
+	public boolean activate(Person u){					
+		char type;
+		if(u.getIsAdmin()){
+			type = 'a';
+		}
+		else{
+			type = 'u';
+		}
+		int i = library.user_editUser(u.getUsername(),u.getFirstName(),u.getLastName(),u.getPassword()
+				,type,'Y');
 		if(i==-1) return false;
 		else return true;
 	
@@ -240,7 +295,7 @@ public class DBController {
 	 * @param p
 	 * @return
 	 */
-	public char getActiveState(Person p){
+	/*public char getActiveState(Person p){			//work on eliminating
 		String[][] persons = library.user_getUsers();
 		for(String[] personInfo:persons){
 			if(p.getUsername().equals(personInfo[2])){
@@ -248,7 +303,7 @@ public class DBController {
 			}
 		}
 		return 'e'; //Person not found. Make sure to catch. ERROR
-	}
+	}*/
 	
 	//Should this update person in general? Can an admin update an admin?
 	/** Updates the person info
@@ -258,16 +313,23 @@ public class DBController {
 	 * @param password
 	 * @return
 	 */
-	public boolean updatePerson(Person person,String firstName, String lastName, String password){
+	public boolean updatePerson(Person person,String firstName, String lastName, String password, boolean isAdmin, boolean isActive){	//Make sure isAdmin and isActive are correctly managed
 		int i = -1;
-		if(person.getIsAdmin()){
-			i = library.user_editUser(person.getUsername(),firstName,
-					lastName,password,'a',this.getActiveState(person));
+		char type;
+		char ActiveState;
+		if(isAdmin){
+			type = 'a';
 		}
-		else{ //person is User:
-			i = library.user_editUser(person.getUsername(),firstName,
-					lastName,password,'u',this.getActiveState(person));
+		else{
+			type= 'u';
 		}
+		if(isActive){
+			ActiveState = 'Y';
+		}
+		else{
+			ActiveState = 'N';
+		}
+		i = library.user_editUser(person.getUsername(),firstName,lastName,password,type,ActiveState);
 		if(i<1) return false;
 		else return true;
 	}
@@ -360,10 +422,16 @@ public class DBController {
 	 * @param p
 	 * @return
 	 */
-	public boolean deactivate(Person p){
-		Person h = this.findByUserName(p.getUsername());
-		int i = library.user_editUser(h.getUsername(),h.getFirstName(),h.getLastName(),h.getPassword()
-				,'u','N');
+	public boolean deactivate(Person p){			//double check integration with Person.isActive 
+		char type;
+		if (p.getIsAdmin())
+		{
+			type = 'a';
+		}
+		else{
+			type = 'u';							
+		}
+		int i = library.user_editUser(p.getUsername(),p.getFirstName(),p.getLastName(),p.getPassword(),type,'N');
 		if(i==-1) return false;
 		else return true;
 	}

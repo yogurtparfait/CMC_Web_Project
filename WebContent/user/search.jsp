@@ -8,6 +8,8 @@ http-equiv="content-type">
 <title>search</title>
 </head>
 <body>
+<%@ include file="../person/header.jsp" %> <!-- Noah this is just a header file I added with __ is logged on and a logout link -Megan -->
+
 <div style="text-align: right;"><span
 style="text-decoration: underline;">Search Menu</span><br>
 <div style="text-align: left;">
