@@ -1,7 +1,3 @@
-/controllers/
-/cmcControllerTests/
-/entities/
+/csci230databaselibrary/
 /interfaces/
-/allTests/
-/cmcEntityTests/
-/testSuites/
+/controllers/

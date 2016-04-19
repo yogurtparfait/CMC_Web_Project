@@ -16,11 +16,11 @@ http-equiv="content-type">
 <%//@ include file="../person/header.jsp" %> <!-- Commented out for now, throwing error -->
 
 <% List<School> schools = new ArrayList<School>() ;
-schools = (List)session.getAttribute("schoolsFound");
+schools = (List<School>)session.getAttribute("schoolsFound");
 
 
 if(schools==null)
-	out.print(" No results found:<P>Return to<A HREF=\"search.jsp\"> search </A>");
+	out.print(" No results found:   <P>Return to<A HREF=\"search.jsp\"> search </A>");
 else{
 	%>
 	<table style="text-align: left; width: 100%;" border="1" cellpadding="2"
@@ -32,7 +32,7 @@ else{
 		<td style="vertical-align: top;">
 		<form action="save_school_action.jsp" name="saveSchool">&nbsp;&nbsp;&nbsp;
 		Save: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input value="<%=s.getName()%>" type=hidden name=schoolName></input> 
-		<input name="save" type="submit"></input></form>
+		<input name="save" type="submit" ></input></form>
 		</td>
 		<td style="vertical-align: top;"><%out.println(s.getName()); %><br>
 		</td>
