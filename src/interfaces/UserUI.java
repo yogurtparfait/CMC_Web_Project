@@ -47,7 +47,7 @@ public class UserUI extends PersonUI{
 	/**
 	 * adds school to user's list of saved schools
 	 * @param s school to be saved
-	 * @return true on sucess
+	 * @return true on success
 	 */
 	public boolean saveSchool(School s){
 		return this.controller.saveSchool(s);

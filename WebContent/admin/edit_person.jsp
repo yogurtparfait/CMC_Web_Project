@@ -33,7 +33,7 @@
             }
         }
  %>
-	<form method="post" action="edit_person_action.jsp" name="edit">
+	<form method="post" action="manage_profile.jsp" name="manage_profile">
 		<table style="text-align: left; width: 266px; height: 228px;"
 		border="1" cellpadding="2" cellspacing="2">
 			<tbody>

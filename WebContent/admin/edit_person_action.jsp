@@ -9,6 +9,7 @@
 	AdminUI aui = (AdminUI) session.getAttribute("UI");   
 	
 	try{
+		
 		Person person = aui.getPersonByUsername(request.getParameter("username"));
 		aui.updatePerson(person, request.getParameter("firstName"), request.getParameter("lastName"),
 				request.getParameter("password"), Boolean.parseBoolean(request.getParameter("isAdmin")), person.getIsActive());
