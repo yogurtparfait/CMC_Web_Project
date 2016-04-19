@@ -17,11 +17,13 @@ http-equiv="content-type">
 
 <% List<School> schools = new ArrayList<School>() ;
 schools = (List<School>)session.getAttribute("schoolsFound");
+		
 
 
 if(schools==null)
 	out.print(" No results found:   <P>Return to<A HREF=\"search.jsp\"> search </A>");
 else{
+	out.print("<P>Return to<A HREF=\"search.jsp\"> search </A>");
 	%>
 	<table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 			cellspacing="2">

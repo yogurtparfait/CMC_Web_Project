@@ -8,6 +8,7 @@ http-equiv="content-type">
 <title>search</title>
 </head>
 <body>
+<P>Return to<A HREF="user_menu.jsp"> menu </A>
 <%//@ include file="../person/header.jsp" %> <!-- Commented out for now, throwing error -->
 
 <div style="text-align: right;"><span

@@ -158,4 +158,9 @@ public class UserController extends PersonController{
 	public User getUser(){
 		return this.thisUser;
 	}
+	
+	public School getSchoolByName(String schoolName){
+		return database.getSchoolByName(schoolName);
+		
+	}
 }
