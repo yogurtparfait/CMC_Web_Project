@@ -157,6 +157,8 @@ emphases[3] = emphasis4;
 
 List<School> schoolsFound = new ArrayList<School>() ;
 
+
+
 schoolsFound = ui.search(schoolName, state, location, control, 
 		
 		BOTnumStudents, BOTpercentFemale, BOTSATVerb, BOTSATMath, BOTexpenses, 
@@ -170,7 +172,8 @@ schoolsFound = ui.search(schoolName, state, location, control,
 
 if(schoolsFound.isEmpty()) {
 	%> No results found:
-		<P>Return to<A HREF="search.jsp"> search </A><%
+		<P>Return to
+		<A HREF="search.jsp"> search </A><%
 }
 else
 	session.setAttribute("schoolsFound",schoolsFound);

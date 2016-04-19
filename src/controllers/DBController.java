@@ -619,8 +619,9 @@ public class DBController {
 				
 				//Checks Emphases
 				for(String t:emphases){
+
 					for(String[] s:currentEmphases){
-						if((s[0].equals(name))&&(s[1].equals(t))){
+						if(((s[0].equals(name))&&(s[1].equals(t)))||t==""){
 							emphasisFound = true;
 						}	
 					}
@@ -634,13 +635,13 @@ public class DBController {
 				
 				if(
 							//name
-							(currentSchool[0].equals(name) || name.equals("")) &&
+							(currentSchool[0].contains(name) || name.equals("")) &&
 							//state
-							(currentSchool[1].equals(state) || state.equals("")) &&
+							(currentSchool[1].contains(state) || state.equals("")) &&
 							//location
-							(currentSchool[2].equals(location) || location.equals("")) &&
+							(currentSchool[2].contains(location) || location.equals("")) &&
 							//control
-							(currentSchool[3].equals(control) || control.equals("")) &&
+							(currentSchool[3].contains(control) || control.equals("")) &&
 							//numberOfStudents
 							(((BOTnumStudents<=Integer.parseInt(currentSchool[4])&&Integer.parseInt(currentSchool[4])<=TOPnumStudents))|| 
 									TOPnumStudents==-1) &&
