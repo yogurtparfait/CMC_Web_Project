@@ -13,7 +13,7 @@ http-equiv="content-type">
 
 
 
-<%//@ include file="../person/header.jsp" %> <!-- Commented out for now, throwing error -->
+<%@ include file="../person/header.jsp" %> <!-- Commented out for now, throwing error -->
 
 <% List<School> schools = new ArrayList<School>() ;
 schools = (List<School>)session.getAttribute("schoolsFound");

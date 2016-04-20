@@ -7,6 +7,7 @@
 <title>Remove School</title>
 </head>
 <body>
+<%@ include file="../person/header.jsp" %> 
 <%
 UserUI ui =(UserUI) session.getAttribute("UI");
 String schoolName = request.getParameter("schoolName");

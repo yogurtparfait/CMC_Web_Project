@@ -7,6 +7,7 @@
 <title>Managing Schools</title>
 </head>
 <body>
+<%@ include file="../person/header.jsp" %> 
 <%
 UserUI ui =(UserUI) session.getAttribute("UI");
 List<School> schools = ui.getSavedSchools();
@@ -14,8 +15,9 @@ List<School> schools = ui.getSavedSchools();
 if(schools==null)
 	out.print(" No saved schools:   <P>Return to<A HREF=\"user_menu.jsp\"> menu </A>");
 else{
-	out.print(" <P>Return to<A HREF=\"user_menu.jsp\"> menu </A>");
 	%>
+	
+	
 	<table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 			cellspacing="2">
 			<tbody><%}
