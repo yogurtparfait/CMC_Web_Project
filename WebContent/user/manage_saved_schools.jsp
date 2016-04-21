@@ -32,7 +32,7 @@ else{
 		<td style="vertical-align: top;"><%out.println(s.getName()); %><br>
 		</td>
 		<td style="vertical-align: top;">
-		<form action="view_School.jsp" name="view">View: <input value="<%=s.getName()%>" type=hidden name=schoolName></input>
+		<form action="view_school.jsp" name="view">View: <input value="<%=s.getName()%>" type=hidden name=schoolName></input>
 		<input
 		name="view" type="submit"></input></form>
 		</td>
