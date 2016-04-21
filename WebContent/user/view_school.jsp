@@ -17,7 +17,7 @@ School currentSchool = ui.getSchoolByName(schoolName);
 	
 	
 	<body>
-<input value="Save" type="submit"><br>
+
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 cellspacing="2">
 <tbody>
