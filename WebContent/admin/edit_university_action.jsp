@@ -12,19 +12,40 @@
 		School school = aui.getSchoolByName(request.getParameter("schoolName"));
 		System.out.println("school is null " + school==null);
 		System.out.println("school name " + school.getName());
-		boolean success = aui.updateSchool(school, school.getName(), 
+		
+		/*boolean success = aui.updateSchool(school, 		//works
+				school.getName(),
+				school.getState(),
+				school.getLocation(),
+				school.getControl(),
+				school.getNumStudents(),
+				school.getPercentFemale(),
+				school.getSATVerb(),
+				school.getSATMath()*2,
+				school.getExpenses(),
+				school.getPercentFinancialAid(),
+				school.getNumberOfApplicants(),
+				school.getPercentAdmitted(),
+				school.getPercentEnrolled(),
+				school.getAcademicsScale(),
+				school.getSocialScale(),
+				6, 
+				school.getEmphases());*/
+		
+		 boolean success = aui.updateSchool(school, 
+				school.getName(), 			//not working
 				request.getParameter("state"), 
 				request.getParameter("location"), 
 				request.getParameter("control"), 
 				Integer.parseInt(request.getParameter("numberOfStudents")), 
-				Integer.parseInt(request.getParameter("percentFemale")), 
-				Integer.parseInt(request.getParameter("SATVerbal")), 
-				Integer.parseInt(request.getParameter("SATMath")), 
-				Integer.parseInt(request.getParameter("expenses")), 
-				Integer.parseInt(request.getParameter("percentFinancialAid")), 
+				Double.parseDouble(request.getParameter("percentFemale")), 
+				Double.parseDouble(request.getParameter("SATVerbal")), 
+				Double.parseDouble(request.getParameter("SATMath")), 
+				Double.parseDouble(request.getParameter("expenses")), 
+				Double.parseDouble(request.getParameter("percentFinancialAid")), 
 				Integer.parseInt(request.getParameter("numberOfApplicants")), 
-				Integer.parseInt(request.getParameter("percentAdmitted")), 
-				Integer.parseInt(request.getParameter("percentEnrolled")), 
+				Double.parseDouble(request.getParameter("percentAdmitted")), 
+				Double.parseDouble(request.getParameter("percentEnrolled")), 
 				Integer.parseInt(request.getParameter("academicsScale")), 
 				Integer.parseInt(request.getParameter("socialScale")), 
 				Integer.parseInt(request.getParameter("qualityOfLifeScale")), 
