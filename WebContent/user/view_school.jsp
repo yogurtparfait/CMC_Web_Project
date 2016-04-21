@@ -139,7 +139,18 @@ cellspacing="2">
 <td style="vertical-align: top;">EMPHASES<br>
 </td>
 <td style="vertical-align: top;">
-<input value= <%out.println(currentSchool.getEmphases());%> name = "EMPHASES" readOnly = "true" ><br>
+<%String emphase1="";
+if (!(currentSchool.getEmphases()[0]==null)){emphase1 = currentSchool.getEmphases()[0];}%>
+<input value= <%out.println(emphase1);%> name = "EMPHASES" readOnly = "true" ><br>
+<%String emphase2="";
+if (!(currentSchool.getEmphases()[1]==null)){emphase2 = currentSchool.getEmphases()[1];}%>
+<input value= <%out.println(emphase2);%> name = "EMPHASES" readOnly = "true" ><br>
+<%String emphase3="";
+if (!(currentSchool.getEmphases()[2]==null)){emphase3 = currentSchool.getEmphases()[2];}%>
+<input value= <%out.println(emphase3);%> name = "EMPHASES" readOnly = "true" ><br>
+<%String emphase4="";
+if (!(currentSchool.getEmphases()[3]==null)){emphase4 = currentSchool.getEmphases()[3];}%>
+<input value= <%out.println(emphase4);%> name = "EMPHASES" readOnly = "true" ><br>
 </td>
 </tr>
 </tbody>
