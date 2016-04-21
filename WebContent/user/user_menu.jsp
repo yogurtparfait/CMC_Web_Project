@@ -22,7 +22,7 @@
 </head>
 <body>
 <%@ include file="../person/header.jsp" %>
-<a href = "manage_search.jsp">Search for Schools</a>
+<a href = "search.jsp">Search for Schools</a>
 <br>
 <a href = "manage_saved_schools.jsp">Manage My Saved Schools</a>
 <br>

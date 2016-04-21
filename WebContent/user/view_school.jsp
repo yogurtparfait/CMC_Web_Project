@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<% UserUI ui =(UserUI) session.getAttribute("UI");
+String schoolName = request.getParameter("schoolName");
+School currentSchool = ui.getSchoolByName(schoolName);
+%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,6 +14,8 @@
 </head>
 <body>
 <%@ include file="../person/header.jsp" %>
+	
+	
 	<body>
 <input value="Save" type="submit"><br>
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
@@ -16,111 +24,130 @@ cellspacing="2">
 <tr>
 <td style="vertical-align: top;">SCHOOL<br>
 </td>
-<td style="vertical-align: top;"><input name="SCHOOL"><br>
+<td style="vertical-align: top;">  
+<input value= <%out.println(currentSchool.getName());%> name = "SCHOOL" readOnly = "true" >
+<br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">STATE<br>
 </td>
-<td style="vertical-align: top;"><input name="STATE"><br>
+<td style="vertical-align: top;">
+<input value= <%out.println(currentSchool.getState());%> name = "STATE" readOnly = "true" >
+<br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">LOCATION<br>
 </td>
-<td style="vertical-align: top;"><input name="LOCATION"><br>
+<td style="vertical-align: top;">
+<input value= <%out.println(currentSchool.getLocation());%> name = "LOCATION" readOnly = "true" ><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">CONTROL<br>
 </td>
-<td style="vertical-align: top;"><input name="CONTROL"><br>
+<td style="vertical-align: top;">
+<input value= <%out.println(currentSchool.getControl());%> name = "CONTROL" readOnly = "true" ><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">NUMBER OF STUDENTS<br>
 </td>
-<td style="vertical-align: top;"><input name="NUMBER OF STUDENTS"><br>
+<td style="vertical-align: top;">
+<input value= <%out.println(currentSchool.getNumStudents());%> name = "NUMBEROFSTUDENT" readOnly = "true" ><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">% FEMALE<br>
 </td>
-<td style="vertical-align: top;"><input name="% FEMALE"><br>
+<td style="vertical-align: top;">
+<input value= <%out.println(currentSchool.getPercentFemale());%> name = "FEMALE" readOnly = "true" ><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">SAT VERBAL<br>
 </td>
-<td style="vertical-align: top;"><input name="SAT VERBAL"><br>
+<td style="vertical-align: top;">
+<input value= <%out.println(currentSchool.getSATVerb());%> name = "SATVERBAL" readOnly = "true" ><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">SAT MATH<br>
 </td>
-<td style="vertical-align: top;"><input name="SAT MATH"><br>
+<td style="vertical-align: top;">
+<input value= <%out.println(currentSchool.getSATMath());%> name = "SATMATH" readOnly = "true" ><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">EXPENSES<br>
 </td>
-<td style="vertical-align: top;"><input name="EXPENSES"><br>
+<td style="vertical-align: top;">
+<input value= <%out.println(currentSchool.getExpenses());%> name = "EXPENSES" readOnly = "true" ><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">% FINANCIAL AID<br>
 </td>
-<td style="vertical-align: top;"><input name="% FINANCIAL AID"><br>
+<td style="vertical-align: top;">
+<input value= <%out.println(currentSchool.getPercentFinancialAid());%> name = "FINANCIALAID" readOnly = "true" ><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">NUMBER OF APPLICANTS<br>
 </td>
-<td style="vertical-align: top;"><input
-name="NUMBER OF APPLICANTS"><br>
+<td style="vertical-align: top;">
+<input value= <%out.println(currentSchool.getNumberOfApplicants());%> name = "NUMBEROFAPPLICANTS" readOnly = "true" ><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">%ADMITTED<br>
 </td>
-<td style="vertical-align: top;"><input name="%ADMITTED"><br>
+<td style="vertical-align: top;">
+<input value= <%out.println(currentSchool.getPercentAdmitted());%> name = "ADMITTED" readOnly = "true" ><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">%ENROLLED<br>
 </td>
-<td style="vertical-align: top;"><input name="%ENROLLED"><br>
+<td style="vertical-align: top;">
+<input value= <%out.println(currentSchool.getPercentEnrolled());%> name = "ENROLLED" readOnly = "true" ><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">ACADEMICS SCALE(1-5)<br>
 </td>
-<td style="vertical-align: top;"><input
-name="ACADEMICS SCALE(1-5)"><br>
+<td style="vertical-align: top;">
+<input value= <%out.println(currentSchool.getAcademicsScale());%> name = "ACADEMICSSCALE" readOnly = "true" ><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">SOCIAL SCALE(1-5)<br>
 </td>
-<td style="vertical-align: top;"><input name="SOCIAL SCALE(1-5)"><br>
+<td style="vertical-align: top;">
+<input value= <%out.println(currentSchool.getSocialScale());%> name = "SOCIALSCALE" readOnly = "true" ><br>
 </td>
 </tr>
 <tr>
-<td style="vertical-align: top;">QUALITY IF LIFE SCALE(1-5)<br>
+<td style="vertical-align: top;">QUALITY OF LIFE SCALE(1-5)<br>
 </td>
-<td style="vertical-align: top;"><input
-name="QUALITY IF LIFE SCALE(1-5)"><br>
+<td style="vertical-align: top;">
+<input value= <%out.println(currentSchool.getQualityOfLifeScale());%> name = "QUALITYOFLIFESCALE" readOnly = "true" ><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">EMPHASES<br>
 </td>
-<td style="vertical-align: top;"><input name="EMPHASES"><br>
+<td style="vertical-align: top;">
+<input value= <%out.println(currentSchool.getEmphases());%> name = "EMPHASES" readOnly = "true" ><br>
 </td>
 </tr>
 </tbody>
 </table>
 <br>
 </body>
+
+
+
 </body>
 </html>

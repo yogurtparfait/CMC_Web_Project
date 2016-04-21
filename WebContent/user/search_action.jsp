@@ -7,9 +7,8 @@
 <title>search</title>
 </head>
 <body>
-<%//UserUI ui =(UserUI) session.getAttribute("UI") ; uncomment when running from ui!!!
-User u = new User();
-UserUI ui = new UserUI(u);
+<%UserUI ui =(UserUI) session.getAttribute("UI") ;
+
 
 String schoolName = "";
 if(!(request.getParameter("schoolName")==null))

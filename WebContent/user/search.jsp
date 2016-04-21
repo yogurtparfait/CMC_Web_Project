@@ -8,7 +8,7 @@ http-equiv="content-type">
 <title>search</title>
 </head>
 <body>
-<%//@ include file="../person/header.jsp" %> <!-- Commented out for now, throwing error -->
+<%@ include file="../person/header.jsp" %> 
 
 <div style="text-align: right;"><span
 style="text-decoration: underline;">Search Menu</span><br>

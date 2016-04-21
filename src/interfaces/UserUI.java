@@ -130,6 +130,8 @@ public class UserUI extends PersonUI{
 	return this.controller.UpdateUser(firstName, lastName, password);
 	}
 	
-	
+	public School getSchoolByName(String schoolName){
+		return this.controller.getSchoolByName(schoolName);
+	}
 	}
 
