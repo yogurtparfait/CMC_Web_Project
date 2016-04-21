@@ -2,10 +2,12 @@
     pageEncoding="UTF-8" import="controllers.*, entities.*, interfaces.*, java.util.*"%>
     
 <% 
-	if(!(Boolean) session.getAttribute("isAdmin"))
-	{
-		response.sendRedirect("../person/login.jsp?Error=notAuthorizedAdmin");
-	}
+if(session.getAttribute("isAdmin")==null || !(Boolean) session.getAttribute("isAdmin"))
+{
+	response.sendRedirect("../person/login.jsp?Error=notAuthorizedAdmin");
+}
+else
+{
 	AdminUI aui = (AdminUI) session.getAttribute("UI"); 
 	String currentUsername = aui.getCurrentUsername();
 	List<Person> people = aui.getPeople();
@@ -109,3 +111,4 @@
 	</table>
 </body>
 </html>
+<%}%>

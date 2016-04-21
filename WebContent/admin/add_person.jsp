@@ -2,12 +2,14 @@
     pageEncoding="UTF-8" import="controllers.*, entities.*, interfaces.*, java.util.*"%>
     
 <% 
-	if(!(Boolean) session.getAttribute("isAdmin"))
+	if(session.getAttribute("isAdmin")==null || !(Boolean) session.getAttribute("isAdmin"))
 	{
 		response.sendRedirect("../person/login.jsp?Error=notAuthorizedAdmin");
 	}
-	AdminUI aui = (AdminUI) session.getAttribute("UI");   
-	Person person = new Person();
+	else
+	{
+		AdminUI aui = (AdminUI) session.getAttribute("UI");   
+		Person person = new Person();
 
 	
 %>
@@ -60,3 +62,4 @@ String anyErrors = request.getParameter("Error");
 	</form>
 </body>
 </html>
+<%}%>

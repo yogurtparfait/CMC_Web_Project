@@ -2,24 +2,27 @@
     pageEncoding="UTF-8" import="controllers.*, entities.*, interfaces.*, java.util.*"%>
     
 <% 
-	if(!(Boolean) session.getAttribute("isAdmin"))
+	if(session.getAttribute("isAdmin")==null || !(Boolean) session.getAttribute("isAdmin"))
 	{
 		response.sendRedirect("../person/login.jsp?Error=notAuthorizedAdmin");
-	}																				// may need else because response redirect in if and later
-	AdminUI aui = (AdminUI) session.getAttribute("UI");   
-	Person person = new Person();
-	try{
-		person = aui.getPersonByUsername(request.getParameter("username"));
-		aui.addPerson(request.getParameter("firstName"), request.getParameter("lastName"),
-				request.getParameter("password"), request.getParameter("username"), 
-				Boolean.parseBoolean(request.getParameter("isAdmin"))); 
-		response.sendRedirect("manage_people.jsp");
-	}
-	catch(Exception e) //person does not exist //also need to catch addperson exceptions
+	}		// may need else because response redirect in if and later
+	else
 	{
-		response.sendRedirect("manage_people.jsp?Error=notAPerson");
-	}
+		AdminUI aui = (AdminUI) session.getAttribute("UI");   
+		Person person = new Person();
 	
+		try{
+			person = aui.getPersonByUsername(request.getParameter("username"));
+			aui.addPerson(request.getParameter("firstName"), request.getParameter("lastName"),
+					request.getParameter("password"), request.getParameter("username"), 
+					Boolean.parseBoolean(request.getParameter("isAdmin"))); 
+			response.sendRedirect("manage_people.jsp");
+		}
+		catch(Exception e) //person does not exist //also need to catch addperson exceptions
+		{
+			response.sendRedirect("manage_people.jsp?Error=notAPerson");
+		}
+	}
 	
 	
 %>

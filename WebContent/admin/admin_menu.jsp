@@ -2,10 +2,12 @@
     pageEncoding="UTF-8"%>
     
 <%
-if(!(Boolean) session.getAttribute("isAdmin"))
+if(session.getAttribute("isAdmin")==null || !(Boolean) session.getAttribute("isAdmin"))
 {
 	response.sendRedirect("../person/login.jsp?Error=notAuthorizedAdmin");
 }
+else
+{
 %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -20,3 +22,4 @@ if(!(Boolean) session.getAttribute("isAdmin"))
 <a href = "manage_people.jsp">Manage People</a>
 </body>
 </html>
+<%}%>

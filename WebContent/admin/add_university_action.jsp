@@ -2,22 +2,24 @@
     pageEncoding="UTF-8" import="controllers.*, entities.*, interfaces.*, java.util.*"%>
     
 <% 
-	if(!(Boolean) session.getAttribute("isAdmin"))
+	if(session.getAttribute("isAdmin")==null || !(Boolean) session.getAttribute("isAdmin"))
 	{
 		response.sendRedirect("../person/login.jsp?Error=notAuthorizedAdmin");
-	}																				// may need else because response redirect in if and later
-	AdminUI aui = (AdminUI) session.getAttribute("UI");   
-	
-	try{
-		School school = aui.getSchoolByName(request.getParameter("schoolName"));
-		aui.addSchool(request.getParameter("schoolName"), request.getParameter("state"), request.getParameter("location"), request.getParameter("control"), Integer.parseInt(request.getParameter("numberOfStudents")), Integer.parseInt(request.getParameter("percentFemale")), Integer.parseInt(request.getParameter("SATVerbal")), Integer.parseInt(request.getParameter("SATMath")), Integer.parseInt(request.getParameter("expenses")), Integer.parseInt(request.getParameter("percentFinancialAid")), Integer.parseInt(request.getParameter("numberOfApplicants")), Integer.parseInt(request.getParameter("percentAdmitted")), Integer.parseInt(request.getParameter("percentEnrolled")), Integer.parseInt(request.getParameter("academicsScale")), Integer.parseInt(request.getParameter("socialScale")), Integer.parseInt(request.getParameter("qualityOfLifeScale")));
-		response.sendRedirect("manage_universities.jsp");
-	}
-	catch(Exception e) //person does not exist //also need to catch addperson exceptions
+	}	// may need else because response redirect in if and later
+	else
 	{
-		response.sendRedirect("manage_universities.jsp?Error=notASchool");
-	}
+		AdminUI aui = (AdminUI) session.getAttribute("UI");   
 	
+		try{
+			School school = aui.getSchoolByName(request.getParameter("schoolName"));
+			aui.addSchool(request.getParameter("schoolName"), request.getParameter("state"), request.getParameter("location"), request.getParameter("control"), Integer.parseInt(request.getParameter("numberOfStudents")), Integer.parseInt(request.getParameter("percentFemale")), Integer.parseInt(request.getParameter("SATVerbal")), Integer.parseInt(request.getParameter("SATMath")), Integer.parseInt(request.getParameter("expenses")), Integer.parseInt(request.getParameter("percentFinancialAid")), Integer.parseInt(request.getParameter("numberOfApplicants")), Integer.parseInt(request.getParameter("percentAdmitted")), Integer.parseInt(request.getParameter("percentEnrolled")), Integer.parseInt(request.getParameter("academicsScale")), Integer.parseInt(request.getParameter("socialScale")), Integer.parseInt(request.getParameter("qualityOfLifeScale")));
+			response.sendRedirect("manage_universities.jsp");
+		}
+		catch(Exception e) //person does not exist //also need to catch addperson exceptions
+		{
+			response.sendRedirect("manage_universities.jsp?Error=notASchool");
+		}
+	}
 	
 	
 %>

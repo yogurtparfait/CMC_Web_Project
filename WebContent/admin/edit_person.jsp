@@ -2,19 +2,20 @@
     pageEncoding="UTF-8" import="controllers.*, entities.*, interfaces.*, java.util.*"%>
     
 <% 
-	if(!(Boolean) session.getAttribute("isAdmin"))
-	{
+	if(session.getAttribute("isAdmin")==null || !(Boolean) session.getAttribute("isAdmin"))	{
 		response.sendRedirect("../person/login.jsp?Error=notAuthorizedAdmin");
 	}
-	AdminUI aui = (AdminUI) session.getAttribute("UI");   
-	Person person = new Person();
-	try{
-		person = aui.getPersonByUsername(request.getParameter("username"));
-	}
-	catch(Exception e) //person does not exist
-	{
-		response.sendRedirect("manage_people.jsp?Error=notAPerson");
-	}
+	else
+		{
+		AdminUI aui = (AdminUI) session.getAttribute("UI");   
+		Person person = new Person();
+		try{
+			person = aui.getPersonByUsername(request.getParameter("username"));
+		}
+		catch(Exception e) //person does not exist
+		{
+			response.sendRedirect("manage_people.jsp?Error=notAPerson");
+		}
 	
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -68,3 +69,4 @@
 	</form>
 </body>
 </html>
+<%}%>
