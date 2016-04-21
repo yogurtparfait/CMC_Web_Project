@@ -11,15 +11,30 @@
 	
 	try{
 		User user = uui.getUser();
+		
 		String firstname = user.getFirstName();
+		if(!(request.getParameter("firstname")==null))
+		firstname = request.getParameter("firstname");
+		
 		String lastname = user.getLastName();
+		if(!(request.getParameter("lastname")==null))
+		lastname = request.getParameter("lastname");
+		
 		String password = user.getPassword();
+		if(!(request.getParameter("password")==null))
+		password = request.getParameter("password");
+		
+		user.setFirstName(firstname);
+		user.setLastName(lastname);
+		user.setPassword(password);
+		
 		uui.UpdateUser(firstname,lastname,password);
+		session.setAttribute("UI",new UserUI(user));
 		response.sendRedirect("manage_profile.jsp");
 	}
 	catch(Exception e) //person does not exist //need to also take care of update exceptions
 	{
-		response.sendRedirect("manage_people.jsp?Error=notAUser");
+		response.sendRedirect("manage_profile.jsp?Error=notAUser");
 	}
 %>
     
