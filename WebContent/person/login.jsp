@@ -48,7 +48,7 @@ String anyErrors = request.getParameter("Error");
 			<tr>
 				<td style="vertical-align: top;">Password<br>
 				</td>
-				<td style="vertical-align: top;"><input name="Password"> </td>
+				<td style="vertical-align: top;"><input name="Password" type = "password"> </td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;">Steal<br>
