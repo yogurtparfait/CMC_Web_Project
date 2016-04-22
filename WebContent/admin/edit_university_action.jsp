@@ -15,27 +15,9 @@
 			System.out.println("school is null " + school==null);
 			System.out.println("school name " + school.getName());
 			
-			/*boolean success = aui.updateSchool(school, 		//works
-					school.getName(),
-					school.getState(),
-					school.getLocation(),
-					school.getControl(),
-					school.getNumStudents(),
-					school.getPercentFemale(),
-					school.getSATVerb(),
-					school.getSATMath()*2,
-					school.getExpenses(),
-					school.getPercentFinancialAid(),
-					school.getNumberOfApplicants(),
-					school.getPercentAdmitted(),
-					school.getPercentEnrolled(),
-					school.getAcademicsScale(),
-					school.getSocialScale(),
-					6, 
-					school.getEmphases());*/
 			
 			 boolean success = aui.updateSchool(school, 
-					school.getName(), 			//not working
+					school.getName(), 			
 					request.getParameter("state"), 
 					request.getParameter("location"), 
 					request.getParameter("control"), 
