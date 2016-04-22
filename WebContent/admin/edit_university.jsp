@@ -33,7 +33,7 @@ School s = aui.getSchoolByName(request.getParameter("schoolName"));
 			<tbody>
 				<tr>
 					<td style="vertical-align: top;">School Name: </td>
-					<td style="vertical-align: top;"><input name="schoolName" value = "<%=s.getName() %>"> </td>
+					<td style="vertical-align: top;"><input name="schoolName" readonly value = "<%=s.getName() %>"> </td>
 				</tr>
 				<tr>
 					<td style="vertical-align: top;">State: </td>
