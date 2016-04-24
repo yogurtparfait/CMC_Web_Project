@@ -26,15 +26,17 @@ else{
 		<tr>
 		<td style="vertical-align: top;">
 		<form action="remove_saved_school_action.jsp" name="unsaveSchool">&nbsp;&nbsp;&nbsp;
-		Remove: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input value="<%=s.getName()%>" type=hidden name=schoolName></input> 
-		<input name="remove" type="submit" ></input></form>
+			<input value="<%=s.getName()%>" type=hidden name=schoolName></input> 
+			<input name="remove" value = "Remove" type="submit" ></input>
+		</form>
 		</td>
 		<td style="vertical-align: top;"><%out.println(s.getName()); %><br>
 		</td>
 		<td style="vertical-align: top;">
-		<form action="view_school.jsp" name="view">View: <input value="<%=s.getName()%>" type=hidden name=schoolName></input>
-		<input
-		name="view" type="submit"></input></form>
+		<form action="view_school.jsp" name="view"> 
+			<input value="<%=s.getName()%>" type=hidden name=schoolName></input>
+			<input name="view" value = "View" type="submit"></input>
+			</form>
 		</td>
 		</tr>
 		<%

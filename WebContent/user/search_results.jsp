@@ -33,15 +33,15 @@ else{
 		<tr>
 		<td style="vertical-align: top;">
 		<form action="save_school_action.jsp" name="saveSchool">&nbsp;&nbsp;&nbsp;
-		Save: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input value="<%=s.getName()%>" type=hidden name=schoolName></input> 
-		<input name="save" type="submit" ></input></form>
+		<input value="<%=s.getName()%>" type=hidden name=schoolName></input> 
+		<input name="save" value = "save" type="submit" ></input></form>
 		</td>
 		<td style="vertical-align: top;"><%out.println(s.getName()); %><br>
 		</td>
 		<td style="vertical-align: top;">
-		<form action="view_school_with_recommendations.jsp" name="view">View: <input value="<%=s.getName()%>" type=hidden name=schoolName></input>
-		<input
-		name="view" type="submit"></input></form>
+		<form action="view_school_with_recommendations.jsp" name="view">
+		<input value="<%=s.getName()%>" type=hidden name=schoolName></input>
+		<input name="view" value = "view" type="submit"></input></form>
 		</td>
 		</tr>
 		<%
