@@ -141,14 +141,26 @@ name="qualityOfLifeScaleTop"><br>
 &nbsp;<input name="emphasis4"><br>
 </td>
 </tr>
+<tr>								<!-- These inputs replace old buttons -md -->
+				<td style="vertical-align: top;"><input value="Search for Schools" 
+				name="search" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td style="vertical-align: top;"><input value="Reset"
+				name="Reset" type="reset"></td>
+</tr>
 </tbody>
 </table>
 </div>
 </div>
-<div style="text-align: left;">Search for Schools: <button
-name="searchEnter"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-Reset Form:&nbsp; <button name="resetForm" type="reset"></button><br>
+
+<!-- <div style="text-align: left;">								These are replaced by new buttons above -md
+	Search for Schools: 
+	<button name="searchEnter"></button>
+	
+	Reset Form:&nbsp; <button name="resetForm" type="reset"></button>
+	<br>
 </div>
+-->
+
 </form>
 <div style="text-align: left;">
 </div>
