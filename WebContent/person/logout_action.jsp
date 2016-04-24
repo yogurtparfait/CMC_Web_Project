@@ -2,10 +2,17 @@
     pageEncoding="UTF-8" import="controllers.*, entities.*, interfaces.*, java.util.*"%>
     
 <%
+if(session.getAttribute("isAdmin")==null)	{
+	response.sendRedirect("../person/login.jsp");
+}
+else {
 	PersonUI pui = (PersonUI) session.getAttribute("UI");
 	pui.logOut();
+	PersonUI newUI = new PersonUI();
+	session.setAttribute("UI", newUI);
+	session.setAttribute("isAdmin", null);
 	response.sendRedirect("../person/login.jsp");
-	
+}
 %> 
     
     
