@@ -71,7 +71,7 @@ else
 			<tr>
 				<td style="vertical-align: top;">
 					<form method="post" action="deactivate_activate_person_action.jsp" name="deactivate_activate_person">
-						<input value= <%out.println(p.getUsername());%> name = "username" type = "hidden">
+						<input value= <%out.println(p.getUsername());%> name = "usernameForDeactivate" type = "hidden">
 						<input value=<%if(p.getIsActive())
 											out.println("deactivate"); 
 										else 

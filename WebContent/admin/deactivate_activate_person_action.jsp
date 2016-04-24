@@ -11,10 +11,11 @@
 	}
 	else
 	{
-		AdminUI aui = (AdminUI) session.getAttribute("adminUI");   
-		//Person person = new Person();
+
+		AdminUI aui = (AdminUI) session.getAttribute("UI");   
+		Person person = new Person();
 		try{
-			Person person = aui.getPersonByUsername(request.getParameter("username"));
+			person = aui.getPersonByUsername(request.getParameter("usernameForDeactivate"));
 			try {
 				aui.changeStatus(person);
 				response.sendRedirect("manage_people.jsp");
@@ -26,6 +27,7 @@
 		}
 		catch(Exception e) //person does not exist
 		{
+			e.printStackTrace();
 			response.sendRedirect("manage_people.jsp?Error=notAPerson");
 		}
 	}

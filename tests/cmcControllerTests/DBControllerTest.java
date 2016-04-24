@@ -177,6 +177,7 @@ import entities.*;
 			assertTrue("deactivate works for active user",!u.getIsActive());
 			controller.activate(u);
 			assertTrue("activate works for non-active user",u.getIsActive());
+			controller.deletePerson("username5");
 		}
 		
 		@Test
@@ -301,8 +302,7 @@ import entities.*;
 			
 
 			List<School> schools1 = controller.recommendations(s2);
-			assertTrue("School recommends correctly similar school",
-					schools1.get(0).getName().equals("CAL TECH"));
+			assertTrue("School recommends correctly similar school", schools1.get(0).getName().equals("CAL TECH"));
 	}
 		
 	}
