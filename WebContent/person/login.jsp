@@ -51,11 +51,6 @@ String anyErrors = request.getParameter("Error");
 				<td style="vertical-align: top;"><input name="Password" type = "password"> </td>
 			</tr>
 			<tr>
-				<td style="vertical-align: top;">Steal<br>
-				</td>
-				<td style="vertical-align: top;"><input type = "checkbox" name="Steal"></td>
-			</tr>
-			<tr>
 
 				<td style="vertical-align: top;"><input value="Log in"
 				name="Log in" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>

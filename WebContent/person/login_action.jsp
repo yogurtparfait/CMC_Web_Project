@@ -4,7 +4,7 @@
 	PersonUI pui = new PersonUI();
 
 	try{
-		PersonUI newUI = pui.logOn(request.getParameter("Username"),request.getParameter("Password"), Boolean.parseBoolean(request.getParameter("Steal")));
+		PersonUI newUI = pui.logOn(request.getParameter("Username"),request.getParameter("Password"));
 		
 		if(newUI instanceof UserUI){
 			session.setAttribute("UI", (UserUI) newUI);
@@ -29,9 +29,6 @@
 		}
 		else if (e.getMessage().equals("Person is deactivated")){
 			response.sendRedirect("login.jsp?Error=Deactivated");
-		}
-		else if (e.getMessage().equals("Session in use")){
-			response.sendRedirect("login.jsp?Error=Steal");
 		}
 		else {
 			response.sendRedirect("login.jsp?Error=Other");

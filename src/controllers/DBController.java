@@ -344,15 +344,6 @@ public class DBController {
 		return true;
 	}
 	
-	//for steal
-	/** Logs in the person and checks if availabale to steal. 
-	 * @param p
-	 * @return
-	 */
-	public boolean logInPerson(Person p){
-		//TODO Has to do stealing. 
-		return true;
-	}
 	
 	/** Updates the school.
 	 * @param s

@@ -27,25 +27,19 @@ public class PersonController {
 	 * @param steal whether they want to steal the session or not
 	 * @return PersonUI that is either and adminui or userui depending on which type of user just logged in
 	 */
-	public PersonUI logOn(String username, String password, boolean steal){
-			//Steal does nothing.
+	public PersonUI logOn(String username, String password){
+			
 			
 		Person foundPerson = database.findByUserName(username);
 		if(!(foundPerson==null)){								//person exists
 			if(password.equals(foundPerson.getPassword())){ 	//password correct
-				if(foundPerson.getIsActive()){					//is active
-					if(database.logInPerson(foundPerson)){ 		//going to be steal
-						if(foundPerson.getIsAdmin()){			//admin
-							return new AdminUI((Admin)foundPerson);
-						}
-						else 									//user 
-						{ 
-							return new UserUI((User)foundPerson);
-						}
+				if(foundPerson.getIsActive()){					//is active		
+					if(foundPerson.getIsAdmin()){			//admin
+						return new AdminUI((Admin)foundPerson);
 					}
-					else
-					{											//going to be could not steal
-						throw new IllegalArgumentException("Session in use");
+					else 									//user 
+					{ 
+						return new UserUI((User)foundPerson);
 					}
 				}
 				else
