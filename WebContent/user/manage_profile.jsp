@@ -7,14 +7,20 @@
 <title>View/Edit Profile</title>
 </head>
 <body>
+<%
+if(session.getAttribute("isAdmin")==null || (Boolean) session.getAttribute("isAdmin"))
+{
+	response.sendRedirect("../person/login.jsp?Error=notAuthorizedUser");
+}
+else{
+%>
+
+
 <%@ include file="../person/header.jsp" %>
 
 <% 
 
-	if((Boolean) session.getAttribute("isAdmin"))
-	{
-		response.sendRedirect("../person/login.jsp?Error=notAuthorizedUser");
-	} 
+
 
 	UserUI uui = (UserUI) session.getAttribute("UI"); 
 	
@@ -71,7 +77,7 @@
 					<td style="vertical-align: top;"><input value="Reset"
 					name="Reset" type="reset"></td>
 				</tr>
-
+<%}%>
 </body>
 </table>
 </form>

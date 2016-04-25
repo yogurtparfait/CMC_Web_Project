@@ -4,16 +4,18 @@
 	PersonUI pui = new PersonUI();
 
 	try{
-		PersonUI newUI = pui.logOn(request.getParameter("Username"),request.getParameter("Password"), Boolean.parseBoolean(request.getParameter("Steal")));
+		PersonUI newUI = pui.logOn(request.getParameter("Username"),request.getParameter("Password"));
 		
 		if(newUI instanceof UserUI){
 			session.setAttribute("UI", (UserUI) newUI);
 			session.setAttribute("isAdmin", false);
+			session.setAttribute("currentUsername", request.getParameter("Username"));
 			response.sendRedirect("../user/user_menu.jsp");
 		}
 		else if (newUI instanceof AdminUI){
 			session.setAttribute("UI", (AdminUI) newUI);
 			session.setAttribute("isAdmin", true);
+			session.setAttribute("currentUsername", request.getParameter("Username"));
 			response.sendRedirect("../admin/admin_menu.jsp");
 		}
 	}
@@ -27,9 +29,6 @@
 		}
 		else if (e.getMessage().equals("Person is deactivated")){
 			response.sendRedirect("login.jsp?Error=Deactivated");
-		}
-		else if (e.getMessage().equals("Session in use")){
-			response.sendRedirect("login.jsp?Error=Steal");
 		}
 		else {
 			response.sendRedirect("login.jsp?Error=Other");

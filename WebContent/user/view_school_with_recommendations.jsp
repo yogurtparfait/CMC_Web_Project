@@ -1,10 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<% UserUI ui =(UserUI) session.getAttribute("UI");
-String schoolName = request.getParameter("schoolName");
-School currentSchool = ui.getSchoolByName(schoolName);
-List<School> schools = ui.getRecommendations(currentSchool);
+<%
+
+if(session.getAttribute("isAdmin")==null || (Boolean) session.getAttribute("isAdmin"))
+{
+	response.sendRedirect("../person/login.jsp?Error=notAuthorizedUser");
+}
+else{
+
+	UserUI ui =(UserUI) session.getAttribute("UI");
+	String schoolName = request.getParameter("schoolName");
+	School currentSchool = ui.getSchoolByName(schoolName);
+	List<School> schools = ui.getRecommendations(currentSchool);
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -308,3 +316,5 @@ if (!(currentSchool.getEmphases()[3]==null)){emphase4 = currentSchool.getEmphase
 
 </body>
 </html>
+
+<%}%>

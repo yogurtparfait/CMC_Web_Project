@@ -11,24 +11,31 @@ http-equiv="content-type">
 </head>
 <body>
 
+<%if(session.getAttribute("isAdmin")==null || (Boolean) session.getAttribute("isAdmin"))
+{
+	response.sendRedirect("../person/login.jsp?Error=notAuthorizedUser");
+}
+else{ %>
+
+<%@ include file="../person/header.jsp" %> 
+
+<%
 
 
-<%@ include file="../person/header.jsp" %> <!-- Commented out for now, throwing error -->
-
-<% List<School> schools = new ArrayList<School>() ;
-schools = (List<School>)session.getAttribute("schoolsFound");
-		
-
-
-if(schools==null)
-	out.print(" No results found:   <P>Return to<A HREF=\"search.jsp\"> search </A>");
-else{
-	out.print("<P>Return to<A HREF=\"search.jsp\"> search </A>");
+	List<School> schools = new ArrayList<School>() ;
+	schools = (List<School>)session.getAttribute("schoolsFound");
+			
+	
+	
+	if(schools==null)
+		out.print(" No results found:   <P>Return to<A HREF=\"search.jsp\"> search </A>");
+	else{
+		out.print("<P>Return to<A HREF=\"search.jsp\"> search </A>");
 	%>
 	<table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 			cellspacing="2">
 			<tbody><%
-	for(School s:schools){
+		for(School s:schools){
 		%>
 		<tr>
 		<td style="vertical-align: top;">
@@ -45,11 +52,12 @@ else{
 		</td>
 		</tr>
 		<%
-	}
+		}
 %>
 </tbody>
 </table> <%
 
+	}
 }
 %>
 
