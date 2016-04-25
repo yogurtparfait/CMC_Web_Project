@@ -25,7 +25,7 @@ cellspacing="2">
 <td style="vertical-align: top;">SCHOOL<br>
 </td>
 <td style="vertical-align: top;">  
-<input value= <%out.println(currentSchool.getName());%> name = "SCHOOL" readOnly = "true" >
+<%out.println(currentSchool.getName());%>
 <br>
 </td>
 </tr>
@@ -33,7 +33,7 @@ cellspacing="2">
 <td style="vertical-align: top;">STATE<br>
 </td>
 <td style="vertical-align: top;">
-<input value= <%out.println(currentSchool.getState());%> name = "STATE" readOnly = "true" >
+<%out.println(currentSchool.getState());%>
 <br>
 </td>
 </tr>
@@ -41,98 +41,98 @@ cellspacing="2">
 <td style="vertical-align: top;">LOCATION<br>
 </td>
 <td style="vertical-align: top;">
-<input value= <%out.println(currentSchool.getLocation());%> name = "LOCATION" readOnly = "true" ><br>
+<%out.println(currentSchool.getLocation());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">CONTROL<br>
 </td>
 <td style="vertical-align: top;">
-<input value= <%out.println(currentSchool.getControl());%> name = "CONTROL" readOnly = "true" ><br>
+<%out.println(currentSchool.getControl());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">NUMBER OF STUDENTS<br>
 </td>
 <td style="vertical-align: top;">
-<input value= <%out.println(currentSchool.getNumStudents());%> name = "NUMBEROFSTUDENT" readOnly = "true" ><br>
+<%out.println(currentSchool.getNumStudents());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">% FEMALE<br>
 </td>
 <td style="vertical-align: top;">
-<input value= <%out.println(currentSchool.getPercentFemale());%> name = "FEMALE" readOnly = "true" ><br>
+<%out.println(currentSchool.getPercentFemale());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">SAT VERBAL<br>
 </td>
 <td style="vertical-align: top;">
-<input value= <%out.println(currentSchool.getSATVerb());%> name = "SATVERBAL" readOnly = "true" ><br>
+<%out.println(currentSchool.getSATVerb());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">SAT MATH<br>
 </td>
 <td style="vertical-align: top;">
-<input value= <%out.println(currentSchool.getSATMath());%> name = "SATMATH" readOnly = "true" ><br>
+<%out.println(currentSchool.getSATMath());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">EXPENSES<br>
 </td>
 <td style="vertical-align: top;">
-<input value= <%out.println(currentSchool.getExpenses());%> name = "EXPENSES" readOnly = "true" ><br>
+<%out.println(currentSchool.getExpenses());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">% FINANCIAL AID<br>
 </td>
 <td style="vertical-align: top;">
-<input value= <%out.println(currentSchool.getPercentFinancialAid());%> name = "FINANCIALAID" readOnly = "true" ><br>
+<%out.println(currentSchool.getPercentFinancialAid());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">NUMBER OF APPLICANTS<br>
 </td>
 <td style="vertical-align: top;">
-<input value= <%out.println(currentSchool.getNumberOfApplicants());%> name = "NUMBEROFAPPLICANTS" readOnly = "true" ><br>
+<%out.println(currentSchool.getNumberOfApplicants());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">%ADMITTED<br>
 </td>
 <td style="vertical-align: top;">
-<input value= <%out.println(currentSchool.getPercentAdmitted());%> name = "ADMITTED" readOnly = "true" ><br>
+<%out.println(currentSchool.getPercentAdmitted());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">%ENROLLED<br>
 </td>
 <td style="vertical-align: top;">
-<input value= <%out.println(currentSchool.getPercentEnrolled());%> name = "ENROLLED" readOnly = "true" ><br>
+<%out.println(currentSchool.getPercentEnrolled());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">ACADEMICS SCALE(1-5)<br>
 </td>
 <td style="vertical-align: top;">
-<input value= <%out.println(currentSchool.getAcademicsScale());%> name = "ACADEMICSSCALE" readOnly = "true" ><br>
+<%out.println(currentSchool.getAcademicsScale());%><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">SOCIAL SCALE(1-5)<br>
 </td>
 <td style="vertical-align: top;">
-<input value= <%out.println(currentSchool.getSocialScale());%> name = "SOCIALSCALE" readOnly = "true" ><br>
+<%out.println(currentSchool.getSocialScale());%> <br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">QUALITY OF LIFE SCALE(1-5)<br>
 </td>
 <td style="vertical-align: top;">
-<input value= <%out.println(currentSchool.getQualityOfLifeScale());%> name = "QUALITYOFLIFESCALE" readOnly = "true" ><br>
+<%out.println(currentSchool.getQualityOfLifeScale());%><br>
 </td>
 </tr>
 <tr>
@@ -141,16 +141,16 @@ cellspacing="2">
 <td style="vertical-align: top;">
 <%String emphase1="";
 if (!(currentSchool.getEmphases()[0]==null)){emphase1 = currentSchool.getEmphases()[0];}%>
-<input value= <%out.println(emphase1);%> name = "EMPHASES" readOnly = "true" ><br>
+<%out.println(emphase1);%><br>
 <%String emphase2="";
 if (!(currentSchool.getEmphases()[1]==null)){emphase2 = currentSchool.getEmphases()[1];}%>
-<input value= <%out.println(emphase2);%> name = "EMPHASES" readOnly = "true" ><br>
+<%out.println(emphase2);%><br>
 <%String emphase3="";
 if (!(currentSchool.getEmphases()[2]==null)){emphase3 = currentSchool.getEmphases()[2];}%>
-<input value= <%out.println(emphase3);%> name = "EMPHASES" readOnly = "true" ><br>
+<%out.println(emphase3);%><br>
 <%String emphase4="";
 if (!(currentSchool.getEmphases()[3]==null)){emphase4 = currentSchool.getEmphases()[3];}%>
-<input value= <%out.println(emphase4);%> name = "EMPHASES" readOnly = "true" ><br>
+<%out.println(emphase4);%><br>
 </td>
 </tr>
 </tbody>
