@@ -26,7 +26,7 @@ cellspacing="2">
 <td style="vertical-align: top;">SCHOOL<br>
 </td>
 <td style="vertical-align: top;">  
-<input value= <%out.println(currentSchool.getName());%> name = "SCHOOL" readOnly = "true" >
+<input value= "<%out.println(currentSchool.getName());%>" name = "SCHOOL" readOnly = "true" >
 <br>
 </td>
 </tr>
@@ -160,8 +160,11 @@ if (!(currentSchool.getEmphases()[3]==null)){emphase4 = currentSchool.getEmphase
 </body>
 
 <% currentSchool=schools.get(0);%>
-	<body>
-<input value="Save" type="submit"><br>
+<%out.print("May we also recommend:"); %>
+
+
+
+
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 cellspacing="2">
 <tbody>
@@ -169,7 +172,7 @@ cellspacing="2">
 <td style="vertical-align: top;">SCHOOL<br>
 </td>
 <td style="vertical-align: top;">  
-<input value= <%out.println(currentSchool.getName());%> name = "SCHOOL" readOnly = "true" >
+<input value= "<%out.println(currentSchool.getName());%>" name = "SCHOOL" readOnly = "true" >
 <br>
 </td>
 </tr>
@@ -301,7 +304,6 @@ if (!(currentSchool.getEmphases()[3]==null)){emphase4 = currentSchool.getEmphase
 </table>
 <br>
 </body>
-
 
 
 </body>

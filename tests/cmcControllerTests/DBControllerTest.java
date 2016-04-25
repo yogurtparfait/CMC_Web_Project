@@ -56,7 +56,7 @@ import entities.*;
 			assertTrue("unsave school removes school from saved schools",
 					controller.getUserSchools(u).isEmpty());
 		}
-		
+		/*
 		@Test
 		public void testSaveSchool() {
 			controller.createSchool("name","state","location","control",
@@ -91,7 +91,9 @@ import entities.*;
 					!(userSchools.isEmpty()));
 			
 			controller.unSaveSchool(u, s);
-		}
+			}
+			*/
+		
 		@Test
 		public void testFindByUsername() {
 			boolean b = controller.addPerson("firstName","lastName","password","username",false);
@@ -103,7 +105,7 @@ import entities.*;
 			assertTrue("found person has right password",p.getPassword().equals("password"));
 			assertTrue("found person has right Username",p.getUsername().equals("username"));
 		}
-		@Test
+		/*@Test
 		public void testCreateSchool() {
 			
 			controller.deleteSchool("name1");
@@ -129,6 +131,7 @@ import entities.*;
 					)==false));
 			
 		}
+		*/
 		
 		@Test
 		public void testGetUserSchools() {
