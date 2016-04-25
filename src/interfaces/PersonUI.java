@@ -25,8 +25,8 @@ public class PersonUI {
 		 * @param steal
 		 * @return true on sucess
 		 */
-		public PersonUI logOn(String username, String password, boolean steal){
-			return this.controller.logOn(username,password,steal);
+		public PersonUI logOn(String username, String password){
+			return this.controller.logOn(username,password);
 		}
 		/**
 		 * logs person out   
