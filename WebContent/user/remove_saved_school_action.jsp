@@ -7,14 +7,19 @@
 <title>Remove School</title>
 </head>
 <body>
-<%@ include file="../person/header.jsp" %> 
-<%
-UserUI ui =(UserUI) session.getAttribute("UI");
-String schoolName = request.getParameter("schoolName");
-School currentSchool = ui.getSchoolByName(schoolName);
-ui.removeSavedSchool(currentSchool);
-out.print("<P>Return to<A HREF=\"manage_saved_schools.jsp\"> saved schools </A>");
 
+
+if(session.getAttribute("isAdmin")==null || (Boolean) session.getAttribute("isAdmin"))
+{
+	response.sendRedirect("../person/login.jsp?Error=notAuthorizedUser");
+}
+else{
+	UserUI ui =(UserUI) session.getAttribute("UI");
+	String schoolName = request.getParameter("schoolName");
+	School currentSchool = ui.getSchoolByName(schoolName);
+	ui.removeSavedSchool(currentSchool);
+	out.print("<P>Return to<A HREF=\"manage_saved_schools.jsp\"> saved schools </A>");
+}
 %>
 </body>
 </html>

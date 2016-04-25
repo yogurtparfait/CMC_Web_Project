@@ -7,20 +7,30 @@
 <title>Managing Schools</title>
 </head>
 <body>
+
+<%if(session.getAttribute("isAdmin")==null || (Boolean) session.getAttribute("isAdmin"))
+{
+	response.sendRedirect("../person/login.jsp?Error=notAuthorizedUser");
+}
+else{ %>
+
 <%@ include file="../person/header.jsp" %> 
 <%
-UserUI ui =(UserUI) session.getAttribute("UI");
-List<School> schools = ui.getSavedSchools();
 
-if(schools==null)
-	out.print(" No saved schools:   <P>Return to<A HREF=\"user_menu.jsp\"> menu </A>");
-else{
-	%>
+
+	UserUI ui =(UserUI) session.getAttribute("UI");
+	List<School> schools = ui.getSavedSchools();
 	
+	if(schools==null)
+		out.print(" No saved schools:   <P>Return to<A HREF=\"user_menu.jsp\"> menu </A>");
+	else{
+		%>
+		
 	
 	<table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 			cellspacing="2">
-			<tbody><%}
+			<tbody><%
+	}
 	for(School s:schools){
 		%>
 		<tr>
@@ -41,7 +51,7 @@ else{
 		</tr>
 		<%
 	}
-
+}
 
 %>
 </body>

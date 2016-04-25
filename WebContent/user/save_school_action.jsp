@@ -7,14 +7,18 @@
 <title>Saving School</title>
 </head>
 <body>
-<%@ include file="../person/header.jsp" %> 
-
 <%
-UserUI ui =(UserUI) session.getAttribute("UI");
-String schoolName = request.getParameter("schoolName");
-School currentSchool = ui.getSchoolByName(schoolName);
-ui.saveSchool(currentSchool);
-out.print(" School saved   <P>Return to<A HREF=\"search_results.jsp\"> search results </A>");
+if(session.getAttribute("isAdmin")==null || (Boolean) session.getAttribute("isAdmin"))
+{
+	response.sendRedirect("../person/login.jsp?Error=notAuthorizedUser");
+}
+else{
+	UserUI ui =(UserUI) session.getAttribute("UI");
+	String schoolName = request.getParameter("schoolName");
+	School currentSchool = ui.getSchoolByName(schoolName);
+	ui.saveSchool(currentSchool);
+	out.print(" School saved   <P>Return to<A HREF=\"search_results.jsp\"> search results </A>");
+}
 %>
 </body>
 </html>
