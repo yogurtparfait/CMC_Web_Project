@@ -78,10 +78,14 @@ public class PersonController {
 	 * @param p Person to be assigned to this controller
 	 */
 	public void assignPerson(Person p){
+		System.out.println("Assigning person with username" + p.getUsername());
 		this.thisPerson = p;
+		System.out.println("Assigned Username is: " + thisPerson.getUsername());
 	}
 	
 	public String getCurrentUsername(){
+		System.out.println("Person == null" + thisPerson == null);
+		System.out.println("Username is" + thisPerson.getUsername());
 		return thisPerson.getUsername();
 	}
 	

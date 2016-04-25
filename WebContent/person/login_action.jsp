@@ -9,11 +9,13 @@
 		if(newUI instanceof UserUI){
 			session.setAttribute("UI", (UserUI) newUI);
 			session.setAttribute("isAdmin", false);
+			session.setAttribute("currentUsername", request.getParameter("Username"));
 			response.sendRedirect("../user/user_menu.jsp");
 		}
 		else if (newUI instanceof AdminUI){
 			session.setAttribute("UI", (AdminUI) newUI);
 			session.setAttribute("isAdmin", true);
+			session.setAttribute("currentUsername", request.getParameter("Username"));
 			response.sendRedirect("../admin/admin_menu.jsp");
 		}
 	}

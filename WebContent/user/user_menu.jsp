@@ -8,8 +8,8 @@
 		response.sendRedirect("../person/login.jsp?Error=notAuthorizedUser");
 	}
 	else{
-		UserUI uui = (UserUI) session.getAttribute("UI");   
-		Person person = new Person();
+		//UserUI uui = (UserUI) session.getAttribute("UI");   
+		//Person person = new Person();
 
 	
 %>

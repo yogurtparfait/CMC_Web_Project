@@ -3,7 +3,7 @@
 <%
 
 	PersonUI pui = (PersonUI) session.getAttribute("UI");
-	String username = pui.getCurrentUsername();
+	String username = (String) session.getAttribute("currentUsername");
 	
 %>
 <div>

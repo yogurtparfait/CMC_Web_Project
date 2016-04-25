@@ -11,6 +11,7 @@ else {
 	PersonUI newUI = new PersonUI();
 	session.setAttribute("UI", newUI);
 	session.setAttribute("isAdmin", null);
+	session.setAttribute("currentUsername", null);
 	response.sendRedirect("../person/login.jsp");
 }
 %> 
