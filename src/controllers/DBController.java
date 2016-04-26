@@ -727,7 +727,13 @@ public class DBController {
 		List<School> returnSchools = new ArrayList<School>();
 		School[] schoolList = new School[1000];
 		double[] searchVector = new double[16];
-		double[] foundVector = new double[1800];
+		double[] foundVector = new double[200];
+		
+		//Initializes vectors to a high value, so the empty values aren't returned:
+		for(int x = 0;x<foundVector.length;x++){
+			foundVector[x] = 100;
+		}
+		
 		double total = 0;
 		School holder; //placeholder for sorting, total is used for the doubles.
 		int counter = 0;
@@ -748,28 +754,40 @@ public class DBController {
 									if(currentSchool[3].equals(s.getName())) searchVector[3] = 0;
 									else searchVector[3] = 1;
 							//numberOfStudents
+									if(s.getNumStudents()==-1) searchVector[4] = 0; else
 									searchVector[4] = Math.abs(Double.parseDouble(currentSchool[4]) - s.getNumStudents())/s.getNumStudents();
 							//PercentFemale
+									if(s.getPercentFemale()==-1||Double.parseDouble(currentSchool[5])==-1) searchVector[5] = 0; else
 									searchVector[5] = Math.abs(Double.parseDouble(currentSchool[5]) - s.getPercentFemale())/s.getPercentFemale();
 							//SATVerbal
+									if(s.getSATVerb()==-1||Double.parseDouble(currentSchool[6])==-1) searchVector[6] = 0; else
 									searchVector[6] = Math.abs(Double.parseDouble(currentSchool[6]) - s.getSATVerb())/s.getSATVerb();
 							//SATMath
+									if(s.getSATMath()==-1||Double.parseDouble(currentSchool[7])==-1) searchVector[7] = 0; else
 									searchVector[7] = Math.abs(Double.parseDouble(currentSchool[7]) - s.getSATMath())/s.getSATMath();
 							//Expenses
+									if(s.getExpenses()==-1||Double.parseDouble(currentSchool[8])==-1) searchVector[8] = 0; else
 									searchVector[8] = Math.abs(Double.parseDouble(currentSchool[8]) - s.getExpenses())/s.getExpenses();
 							//PercentFincancialAid
+									if(s.getPercentFinancialAid()==-1||Double.parseDouble(currentSchool[9])==-1) searchVector[9] = 0; else
 									searchVector[9] = Math.abs(Double.parseDouble(currentSchool[9]) - s.getPercentFinancialAid())/s.getPercentFinancialAid();
 							//NumberOfApplicants
+									if(s.getNumberOfApplicants()==-1||Double.parseDouble(currentSchool[10])==-1) searchVector[10] = 0; else
 									searchVector[10] = Math.abs(Double.parseDouble(currentSchool[10]) - s.getNumberOfApplicants())/s.getNumberOfApplicants();
 							//PercentAdmitted
+									if(s.getPercentAdmitted()==-1||Double.parseDouble(currentSchool[11])==-1) searchVector[11] = 0; else
 									searchVector[11] = Math.abs(Double.parseDouble(currentSchool[11]) - s.getPercentAdmitted())/s.getPercentAdmitted();
 							//PercentEnrolled
+									if(s.getPercentEnrolled()==-1||Double.parseDouble(currentSchool[12])==-1) searchVector[12] = 0; else
 									searchVector[12] = Math.abs(Double.parseDouble(currentSchool[12]) - s.getPercentEnrolled())/s.getPercentEnrolled();
 							//AcademicsScale
+									if(s.getAcademicsScale()==-1||Double.parseDouble(currentSchool[13])==-1) searchVector[13] = 0; else
 									searchVector[13] = Math.abs(Double.parseDouble(currentSchool[13]) - s.getAcademicsScale())/s.getAcademicsScale();
 							//SocialScale
+									if(s.getSocialScale()==-1||Double.parseDouble(currentSchool[14])==-1) searchVector[14] = 0; else
 									searchVector[14] = Math.abs(Double.parseDouble(currentSchool[14]) - s.getSocialScale())/s.getSocialScale();
 							//QualityOfLife
+									if((s.getQualityOfLifeScale()==-1)||Double.parseDouble(currentSchool[15])==-1) searchVector[15] = 0; else
 									searchVector[15] = Math.abs(Double.parseDouble(currentSchool[15]) - s.getQualityOfLifeScale())/s.getQualityOfLifeScale();
 
 									total = 0;

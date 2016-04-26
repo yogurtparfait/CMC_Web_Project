@@ -26,7 +26,11 @@ else{
 	
 	
 	<body>
-<input value="Save" type="submit"><br>
+
+<form action="save_school_action.jsp" name="saveSchool">&nbsp;&nbsp;&nbsp;
+		<input value="<%=currentSchool.getName()%>" type=hidden name=schoolName></input> 
+		<input name="save" value = "save" type="submit" ></input></form>
+
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 cellspacing="2">
 <tbody>
@@ -167,11 +171,17 @@ if (!(currentSchool.getEmphases()[3]==null)){emphase4 = currentSchool.getEmphase
 <br>
 </body>
 
-<% currentSchool=schools.get(0);%>
+<% 
+for(int n = 0; n<5;n++){
+currentSchool=schools.get(n);
+if(!(currentSchool==null)){
+%>
 <%out.print("May we also recommend:"); %>
 
 
-
+<form action="save_school_action.jsp" name="saveSchool">&nbsp;&nbsp;&nbsp;
+		<input value="<%=currentSchool.getName()%>" type=hidden name=schoolName></input> 
+		<input name="save" value = "save" type="submit" ></input></form>
 
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 cellspacing="2">
@@ -312,7 +322,7 @@ if (!(currentSchool.getEmphases()[3]==null)){emphase4 = currentSchool.getEmphase
 </table>
 <br>
 </body>
-
+<% }}%>
 
 </body>
 </html>
