@@ -10,7 +10,6 @@ public class Person {
 	private String lastName;
 	private String password;
 	private String username;
-	//IsLoggedOn currently does nothing
 	private boolean isLoggedOn;
 	private boolean isAdmin;
 	private boolean isActive;
