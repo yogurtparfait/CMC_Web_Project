@@ -232,23 +232,7 @@ public class DBController {
 	 * @param username username of person
 	 * @return
 	 */
-	/*public boolean addPerson(String firstName, String lastName, String password, String username,char type){ //use other with boolean from now out
-		
-		Person p = this.findByUserName(username);
-		if(!(p==null)) {
-			return false;
-			
-		}
-		
-		else{
-			int i = library.user_addUser(firstName,lastName,username,password,type);
-			if(i<1) return false;
 
-			
-			else return true;
-		}
-	}*/
-	
 	public boolean addPerson(String firstName, String lastName, String password, String username, boolean isAdmin){ //assuming people are created active
 		
 		Person p = this.findByUserName(username);
@@ -290,22 +274,7 @@ public class DBController {
 	
 	}
 	
-	//True if active
-	/** Gets the active state of the person
-	 * @param p
-	 * @return
-	 */
-	/*public char getActiveState(Person p){			//work on eliminating
-		String[][] persons = library.user_getUsers();
-		for(String[] personInfo:persons){
-			if(p.getUsername().equals(personInfo[2])){
-				return personInfo[5].charAt(0);
-			}
-		}
-		return 'e'; //Person not found. Make sure to catch. ERROR
-	}*/
-	
-	//Should this update person in general? Can an admin update an admin?
+
 	/** Updates the person info
 	 * @param person
 	 * @param firstName
