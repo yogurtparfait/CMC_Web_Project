@@ -33,7 +33,6 @@ tr:nth-child(even){background-color: #f2f2f2}
 </head>
 <body>
 
-<h2>Striped Table</h2>
 <p>For zebra-striped tables, use the nth-child() selector and add a background-color to all even (or odd) table rows:</p>
 
 
