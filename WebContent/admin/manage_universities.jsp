@@ -33,7 +33,6 @@ else
 		</head>
 		<body>
 
-		<p>For zebra-striped tables, use the nth-child() selector and add a background-color to all even (or odd) table rows:</p>
 		
 		
 		
