@@ -81,8 +81,10 @@ tr:nth-child(){background-color: #f2f2f2}
 </head>
 <body>
 <br>
+
 <div class= "header"> Welcome to CMC!</div>  <br>
 <div class= "moto">"You're never too cool for school!"</div>
+
 <br>
 <div class="errors">
 <%

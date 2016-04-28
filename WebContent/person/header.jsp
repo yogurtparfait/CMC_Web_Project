@@ -27,3 +27,12 @@
 		<button class = "header-button">Menu</button>
 	</a>
 </div>
+
+<!--  <style>
+	input{
+	border:none;
+	}
+	input[disabled=true] {
+    background-color: #CEEBFB;
+}
+</style>-->
