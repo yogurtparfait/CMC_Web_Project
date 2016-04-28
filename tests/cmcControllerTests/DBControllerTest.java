@@ -35,8 +35,9 @@ import entities.*;
 			controller.createSchool("name","state","location","control",
 					1,.5,1,.5,.5,
 					.5,1,.5,
-					.5,1,1,1
-					);
+					.5,1,1,1,
+					new String[5]);
+			
 			controller.addPerson("firstName","lastName","password","username",false);
 			System.out.println(controller.addSavedSchool(u, s));
 			List<School> userSchools = controller.getUserSchools(u);
@@ -141,7 +142,8 @@ import entities.*;
 			controller.createSchool("name","state","location","control",
 					1,.5,1,.5,.5,
 					.5,1,.5,
-					.5,1,1,1
+					.5,1,1,1,
+					new String[5]
 					);
 			controller.addPerson("firstName", "lastName", "password", "username", false);
 			
@@ -217,7 +219,8 @@ import entities.*;
 			controller.createSchool("name","state","location","control",
 					1,.5,1,.5,.5,
 					.5,1,.5,
-					.5,1,1,1
+					.5,1,1,1,
+					new String[5]
 					);
 			
 			assertTrue("Update works when school is in database",

@@ -49,25 +49,177 @@
 		}		
 
 		tr:nth-child(){background-color: #f2f2f2}
-		</style>
+		
+.heading-block{
+    font-size: 20px; 
+	font-weight: bold;
+ 	text-align: left;
+	color: #565B5D;
+
+	background-color: #66A7C5;
+	width:100%;
+	padding-top: 10px;
+	padding-left:30px;
+	padding-right:30px;
+	padding-bottom:0px;
+	float: left;
+
+	//text-decoration: underline;
+
+}
+/*.header{
+font-size: 15px; 
+	font-weight: bold;
+ 	text-align: left;
+	color: #565B5D;
+	padding: 15px 30px;
+	float: right;
+}*/
+
+.menuButton{
+	background-color: #66A7C5;
+	border: none;
+	color: #F0ECEB;
+	padding: 15px 30px;
+	width: 30%;
+	text-align: center;
+	font-weight: bold; 
+	margin: 5px;
+}
+
+.header-button{
+	background-color: #565B5D;
+	border: none;
+	color: #F0ECEB;
+	padding: 5px 10px;
+	text-align: center;
+	font-weight: bold;
+	margin: 5px;
+}
+
+.header-item{
+	float:right;
+	
+}
+
+.header{
+	position: relative;
+	top: -20px;
+	margin-right:50px;
+	
+}
+
+body{
+background-color: #CEEBFB;
+padding:0px;
+border:0px;
+margin:0px;
+}
+
+.options{
+    font-size: 30px; 
+	font-weight: bold;
+ 	text-align: center;
+	color: #565B5D;
+}
+
+.heading-block{
+    font-size: 20px; 
+	font-weight: bold;
+ 	text-align: left;
+	color: #565B5D;
+
+	background-color: #66A7C5;
+	width:100%;
+	padding-top: 10px;
+	padding-left:30px;
+	padding-right:30px;
+	padding-bottom:0px;
+	float: left;
+
+	//text-decoration: underline;
+
+}
+/*.header{
+font-size: 15px; 
+	font-weight: bold;
+ 	text-align: left;
+	color: #565B5D;
+	padding: 15px 30px;
+	float: right;
+}*/
+
+.menuButton{
+	background-color: #66A7C5;
+	border: none;
+	color: #F0ECEB;
+	padding: 15px 30px;
+	width: 30%;
+	text-align: center;
+	font-weight: bold; 
+	margin: 5px;
+}
+
+.header-button{
+	background-color: #565B5D;
+	border: none;
+	color: #F0ECEB;
+	padding: 5px 10px;
+	text-align: center;
+	font-weight: bold;
+	margin: 5px;
+}
+
+.header-item{
+	float:right;
+	
+}
+
+.header{
+	position: relative;
+	top: -20px;
+	margin-right:50px;
+	
+}
+
+body{
+background-color: #CEEBFB;
+padding:0px;
+border:0px;
+margin:0px;
+}
+
+.options{
+    font-size: 30px; 
+	font-weight: bold;
+ 	text-align: center;
+	color: #565B5D;
+}
+</style>
 		</head>
 		<body>
 
 <meta content="text/html; charset=ISO-8859-1"
 http-equiv="content-type">
-<title>searchResults</title>
+<title>Search Results</title>
 </head>
 <body>
-<div class="title"> Search Results</div>
+
 
 <%if(session.getAttribute("isAdmin")==null || (Boolean) session.getAttribute("isAdmin"))
 {
 	response.sendRedirect("../person/login.jsp?Error=notAuthorizedUser");
 }
 else{ %>
-<div class="header">
-<%@ include file="../person/header.jsp" %> 
+<div class="heading-block">
 
+		<div class = "title">Search Results</div>
+
+
+		<div class="header">
+			<%@ include file="../person/header.jsp" %>
+		</div>
+	</div>
 
 <%
 	List<School> schools = new ArrayList<School>() ;

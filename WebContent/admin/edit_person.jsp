@@ -144,7 +144,8 @@ margin:0px;
 <title>Edit <%=request.getParameter("username") %></title>
 </head>
 <body>
-<div class="heading-block">
+
+	<div class="heading-block">
 
 		<div class = "title">Edit <%=request.getParameter("username") %></div>
 

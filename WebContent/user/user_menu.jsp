@@ -125,21 +125,25 @@ margin:0px;
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title></title>
+<title>Admin Menu</title>
 </head>
 <body>
-<div class = "title">User Menu</div>
+	<div class="heading-block">
 
-<div class  = "header">
-<%@ include file="../person/header.jsp" %>
-</div>
+		<div class = "title">User Menu</div>
+
+
+		<div class="header">
+			<%@ include file="../person/header.jsp" %>
+		</div>
+	</div>
 
 <div class="options">
-<a href = "search.jsp">Search for Schools</a>
+<a href = "search.jsp"><button class ="menuButton">Search for Schools</button></a>
 <br>
-<a href = "manage_saved_schools.jsp">Manage My Saved Schools</a>
+<a href = "manage_saved_schools.jsp"><button class = "menuButton" >Manage My Saved School</button></a>
 <br>
-<a href = "manage_profile.jsp">Manage My Profile</a>
+<a href = "manage_profile.jsp"><button class = "menuButton" >Manage My Profile</button></a>
 
 </div>
 </body>

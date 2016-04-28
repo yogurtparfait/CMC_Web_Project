@@ -29,7 +29,7 @@ import static org.junit.Assert.*;
 		@Test
 		public void testLogOn(){
 
-			PersonUI ui = controller.logOn("ImadUser", "Edited", true);
+			PersonUI ui = controller.logOn("ImadUser", "Edited");
 			assertTrue("is admin", ui instanceof AdminUI);
 			
 			//PersonUI ui2 = controller2.logOn("juser", "user", true);
@@ -39,12 +39,12 @@ import static org.junit.Assert.*;
 		
 		@Test (expected = IllegalArgumentException.class)
 		public void testLogOnBadPassword() {
-			PersonUI ui = controller.logOn("ImadUser", "wrong", true);
+			PersonUI ui = controller.logOn("ImadUser", "wrong");
 		}
 		
 		@Test (expected = IllegalArgumentException.class)
 		public void testLogOnBadUserName(){
-			PersonUI ui = controller.logOn("NotAUser", "NotAPassword", false);
+			PersonUI ui = controller.logOn("NotAUser", "NotAPassword");
 		}
 		
 		@Test
