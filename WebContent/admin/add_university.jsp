@@ -46,6 +46,18 @@
  	 	text-align: left;
 		color: #565B5D;
 }
+
+.submit{
+  background-color: #A3D6F5;
+  border: 2px solid #66A7C5;
+  font-size: 20px;
+}
+
+.reset{
+  background-color: #EE3233;
+  border: 2px solid #66A7C5;
+  font-size: 20px;
+}
 </style>
 		</head>
 		<body>
@@ -143,9 +155,9 @@ String anyErrors = request.getParameter("Error");
 					<td style="vertical-align: top;"><input name="emphasis5" > </td>
 				</tr>
 				<tr>
-					<td style="vertical-align: top;"><input value="Add School"
+					<td style="vertical-align: top;"><input value="Add School" class="submit"
 					name="Save" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td style="vertical-align: top;"><input value="Reset"
+					<td style="vertical-align: top;"><input value="Reset" class="reset"
 					name="Reset" type="reset"></td>
 				</tr>
 			</tbody>
