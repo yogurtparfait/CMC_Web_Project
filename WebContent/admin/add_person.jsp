@@ -59,6 +59,78 @@
   border: 2px solid #66A7C5;
   font-size: 20px;
 }
+.heading-block{
+    font-size: 20px; 
+	font-weight: bold;
+ 	text-align: left;
+	color: #565B5D;
+
+	background-color: #66A7C5;
+	width:100%;
+	padding-top: 10px;
+	padding-left:30px;
+	padding-right:30px;
+	padding-bottom:0px;
+	float: left;
+
+	//text-decoration: underline;
+
+}
+/*.header{
+font-size: 15px; 
+	font-weight: bold;
+ 	text-align: left;
+	color: #565B5D;
+	padding: 15px 30px;
+	float: right;
+}*/
+
+.menuButton{
+	background-color: #66A7C5;
+	border: none;
+	color: #F0ECEB;
+	padding: 15px 30px;
+	width: 30%;
+	text-align: center;
+	font-weight: bold; 
+	margin: 5px;
+}
+
+.header-button{
+	background-color: #565B5D;
+	border: none;
+	color: #F0ECEB;
+	padding: 5px 10px;
+	text-align: center;
+	font-weight: bold;
+	margin: 5px;
+}
+
+.header-item{
+	float:right;
+	
+}
+
+.header{
+	position: relative;
+	top: -20px;
+	margin-right:50px;
+	
+}
+
+body{
+background-color: #CEEBFB;
+padding:0px;
+border:0px;
+margin:0px;
+}
+
+.options{
+    font-size: 30px; 
+	font-weight: bold;
+ 	text-align: center;
+	color: #565B5D;
+}
 </style>
 		</head>
 		<body>
@@ -66,15 +138,18 @@
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title></title>
+<title>Add Person</title>
 </head>
 <body>
-<div class = "title">Edit <%=request.getParameter("username") %></div>
+<div class="heading-block">
 
-<body>
-<div class="header">
-<%@ include file="../person/header.jsp" %>
-</div>
+		<div class = "title">Add Person</div>
+
+
+		<div class="header">
+			<%@ include file="../person/header.jsp" %>
+		</div>
+	</div>
 <%
 String anyErrors = request.getParameter("Error");
         if(anyErrors!=null){
