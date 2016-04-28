@@ -15,8 +15,16 @@
 			System.out.println("school is null " + school==null);
 			System.out.println("school name " + school.getName());
 			
+			String[] emphases = {
+			 		request.getParameter("emphasis0"),
+			 		request.getParameter("emphasis1"),
+			 		request.getParameter("emphasis2"),
+			 		request.getParameter("emphasis3"),
+			 		request.getParameter("emphasis4")};
+			for (String emphasis:emphases)
+				System.out.println("Saving " + emphasis + " as emphasis");
 			
-			 boolean success = aui.updateSchool(school, 
+			boolean success = aui.updateSchool(school, 
 					school.getName(), 			
 					request.getParameter("state"), 
 					request.getParameter("location"), 
@@ -33,7 +41,13 @@
 					Integer.parseInt(request.getParameter("academicsScale")), 
 					Integer.parseInt(request.getParameter("socialScale")), 
 					Integer.parseInt(request.getParameter("qualityOfLifeScale")), 
-					new String[5]);
+					new String[]{
+				 		request.getParameter("emphasis0"),
+				 		request.getParameter("emphasis1"),
+				 		request.getParameter("emphasis2"),
+				 		request.getParameter("emphasis3"),
+				 		request.getParameter("emphasis4")
+					});
 	
 			System.out.println("results: "+ success);
 			response.sendRedirect("manage_universities.jsp");

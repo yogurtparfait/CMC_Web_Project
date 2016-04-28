@@ -34,6 +34,11 @@
 		}
 
 		tr:nth-child(even){background-color: #f2f2f2}
+		
+		.inputTable {
+			background-color: red;
+		}
+		
 		</style>
 		</head>
 		<body>
@@ -54,7 +59,7 @@
 	<form method="post" action="edit_person_action.jsp" name="edit_person">		<!-- //please dont touch this line it was working before someone changed the action to manage_profile-->
 		<table style="text-align: left; width: 266px; height: 228px;"
 		border="1" cellpadding="2" cellspacing="2">
-			<tbody>
+			<tbody class = "inputTable">
 				<tr>
 					<td style="vertical-align: top;">First Name: </td>
 					<td style="vertical-align: top;"><input name="firstName" value="<%=person.getFirstName()%>" > </td>
