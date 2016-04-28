@@ -28,7 +28,7 @@ else
   		  padding: 8px;
 		}
 
-		tr:nth-child(even){background-color: #f2f2f2}
+		tr:nth-child(){background-color: #f2f2f2}
 		
 		body{
 		background-color: #CEEBFB;
