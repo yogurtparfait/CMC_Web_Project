@@ -39,6 +39,7 @@ else
 		font-weight: bold;
  		text-align: left;
 		color: #565B5D;
+		text-decoration: underline;
 		}
 		
 		.header{
@@ -47,6 +48,19 @@ else
  	 	text-align: left;
 		color: #565B5D;
 }
+
+		.edit_button{
+  			background-color: #32EE93;
+ 			border: 2px solid #66A7C5;
+ 		 	font-size: 20px;
+		}
+		
+		.activate_button{
+  			background-color: #6C7476;
+  			color: #F0ECEB;
+ 			border: 2px solid #66A7C5;
+ 		 	font-size: 20px;
+		}
 </style>
 		</head>
 		<body>
@@ -110,7 +124,7 @@ else
 			<% for (Person p: people){%>
 			<tr>
 				<td style="vertical-align: top;">
-					<form method="post" action="deactivate_activate_person_action.jsp" name="deactivate_activate_person">
+					<form method="post" action="deactivate_activate_person_action.jsp" name="deactivate_activate_person" >
 						<input value= <%out.println(p.getUsername());%> name = "usernameForDeactivate" type = "hidden">
 						<input value=<%if(p.getIsActive())
 											out.println("deactivate"); 
@@ -118,7 +132,8 @@ else
 											out.println("activate");%> 
 										<%if (p.getUsername().equals(currentUsername))
 											out.println("disabled");%> 
-										name="activate_deactivate" type="submit">
+										name="activate_deactivate" type="submit" class="activate_button">
+										
 					</form>
 				</td>
 				<td style="vertical-align: top;">
@@ -142,7 +157,7 @@ else
 				<td style="vertical-align: top;">
 					<form method="get" action="edit_person.jsp" name="edit_person">
 						<input value= <%out.println(p.getUsername());%> name = "username" type = "hidden">
-						<input value="edit"name="edit" type="submit">
+						<input value="edit"name="edit" type="submit" class= "edit_button">
 					</form>
 				</td>
 			</tr>

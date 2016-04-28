@@ -28,7 +28,27 @@ th, td {
     padding: 8px;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+		body{
+		background-color: #CEEBFB;
+		}
+		
+			
+		.title{
+    		font-size: 20px; 
+			font-weight: bold;
+ 			text-align: left;
+			color: #565B5D;
+			text-decoration: underline;
+	}
+		
+		.header{
+    		font-size: 15px; 
+			font-weight: bold;
+ 			text-align: left;
+			color: #565B5D;
+		}
+
+tr:nth-child(){background-color: #f2f2f2}
 </style>
 </head>
 <body>
@@ -36,11 +56,14 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>View School</title>
 </head>
 <body>
+<div class="title"> View School</div>
+
+<div class="header">
 <%@ include file="../person/header.jsp" %>
-	
+</div>
 	
 	<body>
 

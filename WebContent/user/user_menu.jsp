@@ -26,6 +26,7 @@
 	font-weight: bold;
  	text-align: left;
 	color: #565B5D;
+			text-decoration: underline;
 }
 .header{
 font-size: 15px; 
