@@ -28,15 +28,38 @@
 		}
 
 		tr:nth-child(even){background-color: #f2f2f2}
-		</style>
+		
+		body{
+		background-color: #CEEBFB;
+		}
+		
+		.title{
+ 	    font-size: 20px; 
+		font-weight: bold;
+ 		text-align: left;
+		color: #565B5D;
+		}
+		
+		.header{
+     	font-size: 15px; 
+		font-weight: bold;
+ 	 	text-align: left;
+		color: #565B5D;
+}
+</style>
 		</head>
 		<body>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Edit </title>
+<title></title>
 </head>
 <body>
+<div class = "title">Edit University</div>
+</head>
+<body>
+<div class="header">
 <%@ include file="../person/header.jsp" %>
+</div>
 <%
 String anyErrors = request.getParameter("Error");
 if(anyErrors!=null){}
