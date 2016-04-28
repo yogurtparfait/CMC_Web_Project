@@ -29,24 +29,53 @@ else{
   		  text-align: left;
   		  padding: 8px;
 		}
+		
+		body{
+		background-color: #CEEBFB;
+		}
+		
+				.title{
+    	font-size: 20px; 
+		font-weight: bold;
+ 		text-align: left;
+		color: #565B5D;
+		text-decoration: underline;
+	}
+		
+		.header{
+    	font-size: 15px; 
+		font-weight: bold;
+ 		text-align: left;
+		color: #565B5D;
+		}
+		
+		.save_button{
+  		background-color: #32EE93;
+ 		 border: 2px solid #66A7C5;
+ 		 font-size: 20px;
+		}
+		
 
-		tr:nth-child(even){background-color: #f2f2f2}
+		tr:nth-child(){background-color: #f2f2f2}
 		</style>
 		</head>
 		<body>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>View School and Recommendations</title>
 </head>
 <body>
+<div class="title"> View School and Recommendations</div>
+<div class="header">
 <%@ include file="../person/header.jsp" %>
+</div>
 	
 	
 	<body>
 
 <form action="save_school_action.jsp" name="saveSchool">&nbsp;&nbsp;&nbsp;
 		<input value="<%=currentSchool.getName()%>" type=hidden name=schoolName></input> 
-		<input name="save" value = "save" type="submit" ></input></form>
+		<input name="save" value = "save" type="submit" class="save_button"></input></form>
 
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 cellspacing="2">
@@ -198,7 +227,7 @@ if(!(currentSchool==null)){
 
 <form action="save_school_action.jsp" name="saveSchool">&nbsp;&nbsp;&nbsp;
 		<input value="<%=currentSchool.getName()%>" type=hidden name=schoolName></input> 
-		<input name="save" value = "save" type="submit" ></input></form>
+		<input name="save" value = "save" type="submit" class="save_button"></input></form>
 
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 cellspacing="2">

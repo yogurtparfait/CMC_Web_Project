@@ -14,8 +14,40 @@
   		  text-align: left;
   		  padding: 8px;
 		}
+		
+		body{
+		background-color: #CEEBFB;
+		}
+		
+			
+		.title{
+    	font-size: 20px; 
+		font-weight: bold;
+ 		text-align: left;
+		color: #565B5D;
+		text-decoration: underline;
+	}
+		
+		.header{
+    	font-size: 15px; 
+		font-weight: bold;
+ 		text-align: left;
+		color: #565B5D;
+		}
+		
+		.remove_button{
+  		background-color: #32EE93;
+ 		 border: 2px solid #66A7C5;
+ 		 font-size: 20px;
+		}
 
-		tr:nth-child(even){background-color: #f2f2f2}
+		.view_button{
+ 		 background-color: #EE3233;
+ 		 border: 2px solid #66A7C5;
+ 		 font-size: 20px;
+		}		
+
+		tr:nth-child(){background-color: #f2f2f2}
 		</style>
 		</head>
 		<body>
@@ -24,14 +56,16 @@
 <title>Managing Schools</title>
 </head>
 <body>
-
+<div class="title"> Manage Saved Schools</div>
 <%if(session.getAttribute("isAdmin")==null || (Boolean) session.getAttribute("isAdmin"))
 {
 	response.sendRedirect("../person/login.jsp?Error=notAuthorizedUser");
 }
 else{ %>
 
+<div class="header">
 <%@ include file="../person/header.jsp" %> 
+</div>
 <%
 
 
@@ -54,7 +88,7 @@ else{ %>
 		<td style="vertical-align: top;">
 		<form action="remove_saved_school_action.jsp" name="unsaveSchool">&nbsp;&nbsp;&nbsp;
 			<input value="<%=s.getName()%>" type=hidden name=schoolName></input> 
-			<input name="remove" value = "Remove" type="submit" ></input>
+			<input name="remove" value = "Remove" type="submit" class="remove_button"></input>
 		</form>
 		</td>
 		<td style="vertical-align: top;"><%out.println(s.getName()); %><br>
@@ -62,7 +96,7 @@ else{ %>
 		<td style="vertical-align: top;">
 		<form action="view_school.jsp" name="view"> 
 			<input value="<%=s.getName()%>" type=hidden name=schoolName></input>
-			<input name="view" value = "View" type="submit"></input>
+			<input name="view" value = "View" type="submit" class="view_button"></input>
 			</form>
 		</td>
 		</tr>

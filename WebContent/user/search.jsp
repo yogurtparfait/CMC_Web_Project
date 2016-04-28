@@ -22,8 +22,39 @@ else{
   		  text-align: left;
   		  padding: 8px;
 		}
+		
+		body{
+		background-color: #CEEBFB;
+		}
+		
+		.title{
+    	font-size: 20px; 
+		font-weight: bold;
+ 		text-align: left;
+		color: #565B5D;
+		text-decoration: underline;
+	}
+		
+		.header{
+    	font-size: 15px; 
+		font-weight: bold;
+ 		text-align: left;
+		color: #565B5D;
+		}
+		
+		.submit_button{
+  		background-color: #A3D6F5;
+ 		 border: 2px solid #66A7C5;
+ 		 font-size: 20px;
+		}
 
-		tr:nth-child(even){background-color: #f2f2f2}
+		.reset_button{
+ 		 background-color: #EE3233;
+ 		 border: 2px solid #66A7C5;
+ 		 font-size: 20px;
+		}		
+
+		tr:nth-child()){background-color: #f2f2f2}
 		</style>
 		</head>
 		<body>
@@ -33,10 +64,11 @@ http-equiv="content-type">
 <title>search</title>
 </head>
 <body>
+<div class = "title">Search Menu</div>
+<div class  = "header"> 
 <%@ include file="../person/header.jsp" %> 
+</div>
 
-<div style="text-align: right;"><span
-style="text-decoration: underline;">Search Menu</span><br>
 <div style="text-align: left;">
 <form action="search_action.jsp" name="SEARCH_FIELD">
 <div style="text-align: right;"><span
@@ -167,9 +199,9 @@ name="qualityOfLifeScaleTop"><br>
 </td>
 </tr>
 <tr>						
-				<td style="vertical-align: top;"><input value="Search for Schools" 
+				<td style="vertical-align: top;"><input value="Search for Schools" class=submit_button
 				name="search" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				<td style="vertical-align: top;"><input value="Reset"
+				<td style="vertical-align: top;"><input value="Reset" class="reset_button"
 				name="Reset" type="reset"></td>
 </tr>
 </tbody>

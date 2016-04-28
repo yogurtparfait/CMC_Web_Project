@@ -6,7 +6,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Saving School</title>
 </head>
+<style>
+
+	body{
+		background-color: #CEEBFB;
+	}
+	
+	.save_title{
+		font-size: 20px; 
+		font-weight: bold;
+ 		text-align: left;
+		color: #565B5D;
+	}
+
+</style>
 <body>
+<div class=save_title>
 <%
 if(session.getAttribute("isAdmin")==null || (Boolean) session.getAttribute("isAdmin"))
 {
@@ -20,5 +35,6 @@ else{
 	out.print(" School saved   <P>Return to<A HREF=\"search_results.jsp\"> search results </A>");
 }
 %>
+</div>
 </body>
 </html>
