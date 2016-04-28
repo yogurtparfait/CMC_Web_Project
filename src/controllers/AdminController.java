@@ -43,12 +43,12 @@ public class AdminController extends PersonController{
 	public boolean addSchool(String name,String state,String location,String control,
 			int numStudents,double percentFemale,int SATVerb,double SATMath,double expenses,
 			double percentFinancialAid,int numberOfApplicants,double percentAdmitted,
-			double percentEnrolled,int academicsScale,int socialScale,int qualityOfLifeScale){
+			double percentEnrolled,int academicsScale,int socialScale,int qualityOfLifeScale, String[] emphases){
 	
 				return  database.createSchool(name,state,location,control,
 						numStudents,percentFemale,SATVerb,SATMath,expenses,
 						percentFinancialAid,numberOfApplicants,percentAdmitted,
-						percentEnrolled,academicsScale,socialScale,qualityOfLifeScale);
+						percentEnrolled,academicsScale,socialScale,qualityOfLifeScale, emphases);
 	
 	}
 			/**

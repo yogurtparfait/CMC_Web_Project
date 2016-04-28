@@ -33,52 +33,21 @@
   		  padding: 8px;
 		}
 
-		tr:nth-child(){background-color: #f2f2f2}
+		tr:nth-child(even){background-color: #f2f2f2}
 		
-		body{
-		background-color: #CEEBFB;
+		.inputTable {
+			background-color: red;
 		}
 		
-		.title{
- 	    font-size: 20px; 
-		font-weight: bold;
- 		text-align: left;
-		color: #565B5D;
-		}
-		
-		.header{
-     	font-size: 15px; 
-		font-weight: bold;
- 	 	text-align: left;
-		color: #565B5D;
-}
-
-.submit{
-  background-color: #A3D6F5;
-  border: 2px solid #66A7C5;
-  font-size: 20px;
-}
-
-.reset{
-  background-color: #EE3233;
-  border: 2px solid #66A7C5;
-  font-size: 20px;
-}
-</style>
+		</style>
 		</head>
 		<body>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title></title>
+<title>Edit <%=request.getParameter("username") %></title>
 </head>
 <body>
-<div class = "title">Edit <%=request.getParameter("username") %></div>
-
-</head>
-<body>
-<div class="header">
 <%@ include file="../person/header.jsp" %>
-</div>
 <%
 	String anyErrors = request.getParameter("Error");
         if(anyErrors!=null){
@@ -90,7 +59,7 @@
 	<form method="post" action="edit_person_action.jsp" name="edit_person">		<!-- //please dont touch this line it was working before someone changed the action to manage_profile-->
 		<table style="text-align: left; width: 266px; height: 228px;"
 		border="1" cellpadding="2" cellspacing="2">
-			<tbody>
+			<tbody class = "inputTable">
 				<tr>
 					<td style="vertical-align: top;">First Name: </td>
 					<td style="vertical-align: top;"><input name="firstName" value="<%=person.getFirstName()%>" > </td>
@@ -112,9 +81,9 @@
 					<td style="vertical-align: top;"><input name="isAdmin" type = "checkbox" value = "<%=person.getIsAdmin()%>"></td> 
 				</tr>
 				<tr>
-					<td style="vertical-align: top;"><input value="Save" class="submit"
+					<td style="vertical-align: top;"><input value="Save"
 					name="Save" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td style="vertical-align: top;"><input value="Reset" class="reset"
+					<td style="vertical-align: top;"><input value="Reset"
 					name="Reset" type="reset"></td>
 				</tr>
 			</tbody>

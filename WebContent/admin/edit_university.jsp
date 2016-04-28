@@ -158,12 +158,21 @@ School s = aui.getSchoolByName(request.getParameter("schoolName"));
 					<td style="vertical-align: top;"><input name="qualityOfLifeScale" value = <%=s.getQualityOfLifeScale() %>> </td>
 				</tr>
 				<tr>
+				<%String[] emphases = s.getEmphases(); %>
 					<td style="vertical-align: top;">Emphases</td>
-					<td style="vertical-align: top;"><input name="emphasis1" > 
-					<input name="emphasis2" >
-					<input name="emphasis3" > 
-					<input name="emphasis4" > 
-					<input name="emphasis5" > </td>
+					<td style="vertical-align: top;">
+					<%for(int i = 0 ;i<5;i++){ %>
+						<input name="<%="emphasis" + i%>" value = "<%if(emphases[i]!=null)
+																	 {
+																	 	out.println(emphases[i]);
+																	 }
+																	 else
+																	 {
+																	 	out.println("");
+										 							 }
+											 						 %>" > 
+					<%} %>
+					</td>
 				</tr>
 				<tr>
 					<td style="vertical-align: top;"><input value="Save Changes" class="submit"
