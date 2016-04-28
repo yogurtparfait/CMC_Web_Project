@@ -64,7 +64,8 @@ input{
     font-size: 15px; 
 	text-align: center;
 	color: #565B5D;
-	line-height: 0px;
+	line-height: 20px;
+	
 }
 
 tr:nth-child(){background-color: #f2f2f2}
@@ -80,7 +81,7 @@ tr:nth-child(){background-color: #f2f2f2}
 </head>
 <body>
 <br>
-<div class= "header"> Welcome to CSS!</div>  <br>
+<div class= "header"> Welcome to CMC!</div>  <br>
 <div class= "moto">"You're never too cool for school!"</div>
 <br>
 <div class="errors">

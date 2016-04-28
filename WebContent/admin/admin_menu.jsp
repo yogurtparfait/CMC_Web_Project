@@ -20,6 +20,7 @@ else
 	font-weight: bold;
  	text-align: left;
 	color: #565B5D;
+<<<<<<< HEAD
 	background-color: #66A7C5;
 	width:100%;
 	padding-top: 10px;
@@ -27,6 +28,9 @@ else
 	padding-right:30px;
 	padding-bottom:0px;
 	float: left;
+=======
+	text-decoration: underline;
+>>>>>>> branch 'master' of https://github.com/yogurtparfait/CMC_Web_Project.git
 }
 /*.header{
 font-size: 15px; 

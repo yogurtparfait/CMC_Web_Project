@@ -26,6 +26,7 @@
 	font-weight: bold;
  	text-align: left;
 	color: #565B5D;
+			text-decoration: underline;
 }
 .header{
 font-size: 15px; 
@@ -44,6 +45,7 @@ background-color: #CEEBFB;
  	text-align: center;
 	color: #565B5D;
 }
+
 
 
 

@@ -31,17 +31,19 @@ else
 		tr:nth-child(){background-color: #f2f2f2}
 		
 		body{
-		background-color: #CEEBFB;
+			background-color: #CEEBFB;
 		}
 		
 		.title{
- 	    font-size: 20px; 
-		font-weight: bold;
- 		text-align: left;
-		color: #565B5D;
+ 	  	  font-size: 20px; 
+			font-weight: bold;
+ 			text-align: left;
+			color: #565B5D;
+			text-decoration: underline;
 		}
 		
 		.header{
+<<<<<<< HEAD
      	font-size: 15px; 
 		font-weight: bold;
  	 	text-align: left;
@@ -124,7 +126,26 @@ margin:0px;
 	text-align: center;
 	font-weight: bold;
 	margin: 5px;
+=======
+     		font-size: 15px; 
+			font-weight: bold;
+ 	 		text-align: left;
+			color: #565B5D;
+>>>>>>> branch 'master' of https://github.com/yogurtparfait/CMC_Web_Project.git
 }
+
+		.edit_button{
+  			background-color: #32EE93;
+ 			border: 2px solid #66A7C5;
+ 		 	font-size: 20px;
+		}
+		
+		.table{
+	font-size: 15px; 
+	border-style: none;
+}
+		
+		
 </style>
 		</head>
 		<body>
@@ -154,8 +175,8 @@ margin:0px;
         }
     %>
             
-	<table style="text-align: left; width: 266px; height: 228px;"
-			border="1" cellpadding="2" cellspacing="2">
+	<table class="table" style="text-align: left; width: 266px; height: 228px;"
+			border="1" cellpadding="1" cellspacing="1">
 		<tbody>
 			<tr>
 				<td style="vertical-align: top;">
@@ -269,7 +290,7 @@ margin:0px;
 					
 					<form method = "get" action = "edit_university.jsp" name = "edit_university">
 						<input value = "<%=s.getName() %>" name = "schoolName" type = hidden>
-						<input type = submit value = "Edit" name = "edit">
+						<input type = submit value = "Edit" name = "edit" class="edit_button">
 					</form>
 				</td>
 			</tr>

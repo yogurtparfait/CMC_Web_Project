@@ -14,8 +14,40 @@
   		  text-align: left;
   		  padding: 8px;
 		}
+		
+			body{
+		background-color: #CEEBFB;
+		}
+		
+			
+		.title{
+    		font-size: 20px; 
+			font-weight: bold;
+ 			text-align: left;
+			color: #565B5D;
+			text-decoration: underline;
+	}
+		
+		.header{
+    		font-size: 15px; 
+			font-weight: bold;
+ 			text-align: left;
+			color: #565B5D;
+		}
+		
+		.editUser_button{
+  			background-color: #32EE93;
+ 			border: 2px solid #66A7C5;
+ 		 	font-size: 20px;
+		}
 
-		tr:nth-child(even){background-color: #f2f2f2}
+		.reset_button{
+  			background-color: #EE3233;
+ 			border: 2px solid #66A7C5;
+ 			font-size: 20px;
+		}		
+
+		tr:nth-child(){background-color: #f2f2f2}
 		</style>
 		</head>
 		<body>
@@ -24,6 +56,7 @@
 <title>View/Edit Profile</title>
 </head>
 <body>
+<div class="title"> Edit Profile</div>
 <%
 if(session.getAttribute("isAdmin")==null || (Boolean) session.getAttribute("isAdmin"))
 {
@@ -32,9 +65,9 @@ if(session.getAttribute("isAdmin")==null || (Boolean) session.getAttribute("isAd
 else{
 %>
 
-
+<div class="header">
 <%@ include file="../person/header.jsp" %>
-
+</div>
 <% 
 
 
@@ -89,9 +122,9 @@ else{
 			</tr>
 			
 			<tr>
-					<td style="vertical-align: top;"><input value="EditUser"
+					<td style="vertical-align: top;"><input value="EditUser" class="editUser_button"
 					name="EditUser" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td style="vertical-align: top;"><input value="Reset"
+					<td style="vertical-align: top;"><input value="Reset" class="reset_button"
 					name="Reset" type="reset"></td>
 				</tr>
 <%}%>
