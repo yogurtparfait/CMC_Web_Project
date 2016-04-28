@@ -27,16 +27,51 @@
   		  padding: 8px;
 		}
 
-		tr:nth-child(even){background-color: #f2f2f2}
-		</style>
+		tr:nth-child(){background-color: #f2f2f2}
+		
+		body{
+		background-color: #CEEBFB;
+		}
+		
+		.title{
+ 	    font-size: 20px; 
+		font-weight: bold;
+ 		text-align: left;
+		color: #565B5D;
+		}
+		
+		.header{
+     	font-size: 15px; 
+		font-weight: bold;
+ 	 	text-align: left;
+		color: #565B5D;
+}
+
+.submit{
+  background-color: #A3D6F5;
+  border: 2px solid #66A7C5;
+  font-size: 20px;
+}
+
+.reset{
+  background-color: #EE3233;
+  border: 2px solid #66A7C5;
+  font-size: 20px;
+}
+</style>
 		</head>
 		<body>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Edit </title>
+<title></title>
 </head>
 <body>
+<div class = "title">Edit University</div>
+</head>
+<body>
+<div class="header">
 <%@ include file="../person/header.jsp" %>
+</div>
 <%
 String anyErrors = request.getParameter("Error");
 if(anyErrors!=null){}
@@ -92,7 +127,17 @@ School s = aui.getSchoolByName(request.getParameter("schoolName"));
 					<td style="vertical-align: top;">Number of Applicants </td>
 					<td style="vertical-align: top;"><input name="numberOfApplicants" value = <%=s.getNumberOfApplicants() %>> </td>
 				</tr>
-				<tr>
+				<tr>.submit{
+  background-color: #A3D6F5;
+  border: 2px solid #66A7C5;
+  font-size: 20px;
+}
+
+.reset{
+  background-color: #EE3233;
+  border: 2px solid #66A7C5;
+  font-size: 20px;
+}
 					<td style="vertical-align: top;">% Admitted </td>
 					<td style="vertical-align: top;"><input name="percentAdmitted" value = <%=s.getPercentAdmitted() %>> </td>
 				</tr>
@@ -130,9 +175,9 @@ School s = aui.getSchoolByName(request.getParameter("schoolName"));
 					</td>
 				</tr>
 				<tr>
-					<td style="vertical-align: top;"><input value="Save Changes"
+					<td style="vertical-align: top;"><input value="Save Changes" class="submit"
 					name="Save" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td style="vertical-align: top;"><input value="Reset"
+					<td style="vertical-align: top;"><input value="Reset" class="reset"
 					name="Reset" type="reset"></td>
 				</tr>
 			</tbody>

@@ -2,6 +2,8 @@
 <head>
 
 <style>
+
+
 table {
     border-collapse: collapse;
     width: 100%;
@@ -12,19 +14,71 @@ th, td {
     padding: 8px;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+body{
+background-color: #CEEBFB;
+}
+
+.header{
+	font-size: 50px; 
+	font-weight: bold;
+ 	text-align: center;
+	color: #565B5D;
+	
+}
+.moto{
+	font-size: 25px; 
+	font-weight: bold;
+	text-align: center;
+	color: #565B5D;
+	line-height: 0px;
+}
+
+.login_table{
+	margin-left: auto;
+	margin-right: auto;
+	font-weight: bold;
+	font-size: 15px; 
+	text-align: center;
+	color: #565B5D;
+	border-style: none;
+}
+
+.submit_button{
+  background-color: #A3D6F5;
+  border: 2px solid #66A7C5;
+  font-size: 20px;
+}
+
+.reset_button{
+  background-color: #EE3233;
+  border: 2px solid #66A7C5;
+  font-size: 20px;
+}
+
+.errors{
+    font-size: 15px; 
+	text-align: center;
+	color: #565B5D;
+	line-height: 0px;
+}
+
+tr:nth-child(){background-color: #f2f2f2}
+
 </style>
+
 </head>
 <body>
 
 
 
-<title>Login Form</title>
+<title> Login Form</title>
 </head>
 <body>
 <br>
-Login form:<br>
+<div class= "header"> Welcome to CSS!</div>  <br>
+<div class= "moto">"You're never too cool for school!"</div>
 <br>
+<div class="errors">
 <%
 String anyErrors = request.getParameter("Error");
         if(anyErrors!=null){
@@ -54,9 +108,9 @@ String anyErrors = request.getParameter("Error");
             }
         }
 %>
+</div>
 <form method="post" action="login_action.jsp" name="login"><br>
-	<table style="text-align: left; width: 266px; height: 228px;"
-	border="1" cellpadding="2" cellspacing="2">
+	<table class ="login_table" style="text-align: left; width: 200px; height: 200x;">
 		<tbody>
 			<tr>
 				<td style="vertical-align: top;">Username<br>
@@ -70,9 +124,9 @@ String anyErrors = request.getParameter("Error");
 			</tr>
 			<tr>
 
-				<td style="vertical-align: top;"><input value="Log in"
+				<td style="vertical-align: top;"><input value="Log in" class="submit_button"
 				name="Log in" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				<td style="vertical-align: top;"><input value="Reset"
+				<td style="vertical-align: top;"><input value="Reset" class="reset_button"
 				name="Reset" type="reset"></td>
 			</tr>
 		</tbody>

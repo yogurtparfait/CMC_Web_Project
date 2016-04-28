@@ -27,16 +27,51 @@
   		  padding: 8px;
 		}
 
-		tr:nth-child(even){background-color: #f2f2f2}
-		</style>
+		tr:nth-child(){background-color: #f2f2f2}
+		
+		body{
+		background-color: #CEEBFB;
+		}
+		
+		.title{
+ 	    font-size: 20px; 
+		font-weight: bold;
+ 		text-align: left;
+		color: #565B5D;
+		}
+		
+		.header{
+     	font-size: 15px; 
+		font-weight: bold;
+ 	 	text-align: left;
+		color: #565B5D;
+}
+
+.submit{
+  background-color: #A3D6F5;
+  border: 2px solid #66A7C5;
+  font-size: 20px;
+}
+
+.reset{
+  background-color: #EE3233;
+  border: 2px solid #66A7C5;
+  font-size: 20px;
+}
+</style>
 		</head>
 		<body>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Add University</title>
+<title></title>
 </head>
 <body>
+<div class = "title">Add University</div>
+</head>
+<body>
+<div class="header">
 <%@ include file="../person/header.jsp" %>
+</div>
 <%
 String anyErrors = request.getParameter("Error");
         if(anyErrors!=null){
@@ -120,9 +155,9 @@ String anyErrors = request.getParameter("Error");
 					<td style="vertical-align: top;"><input name="emphasis5" > </td>
 				</tr>
 				<tr>
-					<td style="vertical-align: top;"><input value="Add School"
+					<td style="vertical-align: top;"><input value="Add School" class="submit"
 					name="Save" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td style="vertical-align: top;"><input value="Reset"
+					<td style="vertical-align: top;"><input value="Reset" class="reset"
 					name="Reset" type="reset"></td>
 				</tr>
 			</tbody>
