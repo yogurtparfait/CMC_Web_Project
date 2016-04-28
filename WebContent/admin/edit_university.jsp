@@ -45,6 +45,155 @@
 		font-weight: bold;
  	 	text-align: left;
 		color: #565B5D;
+		}
+		
+		.heading-block{
+    font-size: 20px; 
+	font-weight: bold;
+ 	text-align: left;
+	color: #565B5D;
+	background-color: #66A7C5;
+	width:100%;
+	padding-top: 10px;
+	padding-left:30px;
+	padding-right:30px;
+	padding-bottom:0px;
+	float: left;
+}
+/*.header{
+font-size: 15px; 
+	font-weight: bold;
+ 	text-align: left;
+	color: #565B5D;
+	padding: 15px 30px;
+	float: right;
+}*/
+
+.menuButton{
+	background-color: #66A7C5;
+	border: none;
+	color: #F0ECEB;
+	padding: 15px 30px;
+	width: 30%;
+	text-align: center;
+	font-weight: bold; 
+	margin: 5px;
+}
+
+.header-button{
+	background-color: #565B5D;
+	border: none;
+	color: #F0ECEB;
+	padding: 5px 10px;
+	text-align: center;
+	font-weight: bold;
+	margin: 5px;
+}
+
+.header-item{
+	float:right;
+	
+}
+
+.header{
+	position: relative;
+	top: -20px;
+	margin-right:50px;
+	
+}
+
+body{
+background-color: #CEEBFB;
+padding:0px;
+border:0px;
+margin:0px;
+}
+
+.options{
+    font-size: 30px; 
+	font-weight: bold;
+ 	text-align: center;
+	color: #565B5D;
+}
+/*		input[type="submit"], button{
+	background-color: #565B5D;
+	border: none;
+	color: #F0ECEB;
+	padding: 5px 10px;
+	text-align: center;
+	font-weight: bold;
+	margin: 5px;
+}*/
+
+		table {
+   		 border-collapse: collapse;
+  		  width: 100%;
+			}
+
+		th, td {
+  		  text-align: left;
+  		  padding: 8px;
+		}
+
+		tr:nth-child(){background-color: #f2f2f2}
+		
+		body{
+		background-color: #CEEBFB;
+		}
+		
+		.title{
+ 	    font-size: 20px; 
+		font-weight: bold;
+ 		text-align: left;
+		color: #565B5D;
+		}
+		
+		.header{
+     	font-size: 15px; 
+		font-weight: bold;
+ 	 	text-align: left;
+		color: #565B5D;
+}
+
+.submit{
+  background-color: #A3D6F5;
+  border: 2px solid #66A7C5;
+  font-size: 20px;
+}
+
+.reset{
+  background-color: #EE3233;
+  border: 2px solid #66A7C5;
+  font-size: 20px;
+}
+		table {
+   		 border-collapse: collapse;
+  		  width: 100%;
+			}
+
+		th, td {
+  		  text-align: left;
+  		  padding: 8px;
+		}
+
+		tr:nth-child(){background-color: #f2f2f2}
+		
+		body{
+		background-color: #CEEBFB;
+		}
+		
+		.title{
+ 	    font-size: 20px; 
+		font-weight: bold;
+ 		text-align: left;
+		color: #565B5D;
+		}
+		
+		.header{
+     	font-size: 15px; 
+		font-weight: bold;
+ 	 	text-align: left;
+		color: #565B5D;
 }
 
 .submit{
@@ -63,15 +212,18 @@
 		<body>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title></title>
+<title>Add University</title>
 </head>
 <body>
-<div class = "title">Edit University</div>
-</head>
-<body>
-<div class="header">
-<%@ include file="../person/header.jsp" %>
-</div>
+<div class="heading-block">
+
+		<div class = "title">Edit University</div>
+
+
+		<div class="header">
+			<%@ include file="../person/header.jsp" %>
+		</div>
+	</div>
 <%
 String anyErrors = request.getParameter("Error");
 if(anyErrors!=null){}
@@ -127,17 +279,7 @@ School s = aui.getSchoolByName(request.getParameter("schoolName"));
 					<td style="vertical-align: top;">Number of Applicants </td>
 					<td style="vertical-align: top;"><input name="numberOfApplicants" value = <%=s.getNumberOfApplicants() %>> </td>
 				</tr>
-				<tr>.submit{
-  background-color: #A3D6F5;
-  border: 2px solid #66A7C5;
-  font-size: 20px;
-}
-
-.reset{
-  background-color: #EE3233;
-  border: 2px solid #66A7C5;
-  font-size: 20px;
-}
+				<tr>
 					<td style="vertical-align: top;">% Admitted </td>
 					<td style="vertical-align: top;"><input name="percentAdmitted" value = <%=s.getPercentAdmitted() %>> </td>
 				</tr>

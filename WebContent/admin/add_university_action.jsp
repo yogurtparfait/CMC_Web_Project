@@ -11,8 +11,29 @@
 		AdminUI aui = (AdminUI) session.getAttribute("UI");   
 	
 		try{
-			School school = aui.getSchoolByName(request.getParameter("schoolName"));
-			aui.addSchool(request.getParameter("schoolName"), request.getParameter("state"), request.getParameter("location"), request.getParameter("control"), Integer.parseInt(request.getParameter("numberOfStudents")), Integer.parseInt(request.getParameter("percentFemale")), Integer.parseInt(request.getParameter("SATVerbal")), Integer.parseInt(request.getParameter("SATMath")), Integer.parseInt(request.getParameter("expenses")), Integer.parseInt(request.getParameter("percentFinancialAid")), Integer.parseInt(request.getParameter("numberOfApplicants")), Integer.parseInt(request.getParameter("percentAdmitted")), Integer.parseInt(request.getParameter("percentEnrolled")), Integer.parseInt(request.getParameter("academicsScale")), Integer.parseInt(request.getParameter("socialScale")), Integer.parseInt(request.getParameter("qualityOfLifeScale")));
+			//School school = aui.getSchoolByName(request.getParameter("schoolName"));
+			aui.addSchool(request.getParameter("schoolName"), 
+					request.getParameter("state"), request.getParameter("location"), 
+					request.getParameter("control"), 
+					Integer.parseInt(request.getParameter("numberOfStudents")), 
+					Integer.parseInt(request.getParameter("percentFemale")), 
+					Integer.parseInt(request.getParameter("SATVerbal")), 
+					Integer.parseInt(request.getParameter("SATMath")), 
+					Integer.parseInt(request.getParameter("expenses")), 
+					Integer.parseInt(request.getParameter("percentFinancialAid")), 
+					Integer.parseInt(request.getParameter("numberOfApplicants")), 
+					Integer.parseInt(request.getParameter("percentAdmitted")), 
+					Integer.parseInt(request.getParameter("percentEnrolled")), 
+					Integer.parseInt(request.getParameter("academicsScale")), 
+					Integer.parseInt(request.getParameter("socialScale")), 
+					Integer.parseInt(request.getParameter("qualityOfLifeScale")),
+					new String[]{request.getParameter("emphasis0"),
+							request.getParameter("emphasis1"),
+							request.getParameter("emphasis2"),
+							request.getParameter("emphasis3"),
+							request.getParameter("emphasis4"),
+							}
+					);
 			response.sendRedirect("manage_universities.jsp");
 		}
 		catch(Exception e) //person does not exist //also need to catch addperson exceptions

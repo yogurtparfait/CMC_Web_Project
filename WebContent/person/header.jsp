@@ -6,13 +6,13 @@
 	String username = (String) session.getAttribute("currentUsername");
 	
 %>
-<div>
-	Logged in as: <%=username%>
+<div class = "menu-bar-status header-item">
+	<%=username%>
 </div>
-<div>
-	<a href="../person/logout_action.jsp">Log out</a>
+<div class = header-item>
+	<a href="../person/logout_action.jsp"><button class = "header-button">Log out</button></a>
 </div>
-<div>
+<div class = header-item>
 	<a href="
 		<%
 			if((Boolean)session.getAttribute("isAdmin"))
@@ -24,6 +24,6 @@
 			}
 		%>
 	">
-		Menu
+		<button class = "header-button">Menu</button>
 	</a>
 </div>

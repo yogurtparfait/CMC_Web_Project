@@ -18,6 +18,10 @@ body{
 background-color: #CEEBFB;
 }
 
+input{
+	border: 0px;
+}
+
 .header{
 	font-size: 50px; 
 	font-weight: bold;
@@ -42,6 +46,7 @@ background-color: #CEEBFB;
 	color: #565B5D;
 	border-style: none;
 }
+
 
 .submit_button{
   background-color: #A3D6F5;

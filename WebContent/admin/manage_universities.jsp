@@ -46,6 +46,84 @@ else
 		font-weight: bold;
  	 	text-align: left;
 		color: #565B5D;
+		}
+		
+		.heading-block{
+    font-size: 20px; 
+	font-weight: bold;
+ 	text-align: left;
+	color: #565B5D;
+	background-color: #66A7C5;
+	width:100%;
+	padding-top: 10px;
+	padding-left:30px;
+	padding-right:30px;
+	padding-bottom:0px;
+	float: left;
+}
+/*.header{
+font-size: 15px; 
+	font-weight: bold;
+ 	text-align: left;
+	color: #565B5D;
+	padding: 15px 30px;
+	float: right;
+}*/
+
+.menuButton{
+	background-color: #66A7C5;
+	border: none;
+	color: #F0ECEB;
+	padding: 15px 30px;
+	width: 30%;
+	text-align: center;
+	font-weight: bold; 
+	margin: 5px;
+}
+
+.header-button{
+	background-color: #565B5D;
+	border: none;
+	color: #F0ECEB;
+	padding: 5px 10px;
+	text-align: center;
+	font-weight: bold;
+	margin: 5px;
+}
+
+.header-item{
+	float:right;
+	
+}
+
+.header{
+	position: relative;
+	top: -20px;
+	margin-right:50px;
+	
+}
+
+body{
+background-color: #CEEBFB;
+padding:0px;
+border:0px;
+margin:0px;
+}
+
+.options{
+    font-size: 30px; 
+	font-weight: bold;
+ 	text-align: center;
+	color: #565B5D;
+}
+		input[type="submit"], button{
+	background-color: #565B5D;
+	border: none;
+	color: #F0ECEB;
+	padding: 5px 10px;
+	text-align: center;
+	font-weight: bold;
+	margin: 5px;
 }
 </style>
 		</head>
@@ -58,11 +136,14 @@ else
 		<title></title>
 </head>
 <body>
-<div class = "title">Manage Universities</div>
-	</head>
-<body>
-<div class="header">
-	<%@ include file="../person/header.jsp" %>
+<div class="heading-block">
+
+		<div class = "title">Manage Universities</div>
+
+
+		<div class="header">
+			<%@ include file="../person/header.jsp" %>
+		</div>
 	</div>
 	<%
 		String anyErrors = request.getParameter("Error");
@@ -78,7 +159,7 @@ else
 		<tbody>
 			<tr>
 				<td style="vertical-align: top;">
-					<a href = "add_university.jsp">New University</a>
+					<a href = "add_university.jsp"><button class=menu-button>New University</button></a>
 				</td>
 			</tr>
 			<tr>
